@@ -1,0 +1,121 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: igor barsux, barsux-industries, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.4.0
+Target DLL:      UL2CM3.DLL V1.164.0.0
+Dialog DLL:      TARMCM1.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+D:\Projects\C...C++\ARM\freaks\test\abs.uvprojx
+Project File Date:  02/07/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main/uart.cpp(1): warning: In file included from...
+main/uart.h(4): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_rst_clk.h(32): warning: In file included from...
+./RTE/Device/MDR1986BE1T\MDR32F9Qx_config.h(84): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/DeviceSupport/MDR1986VE1T/inc\MDR1986VE1T.h(87): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/CoreSupport/CM1\core_cm1.h(131): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/CoreSupport/CM1\core_cmFunc.h(426): warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+  register uint32_t result;
+  ^~~~~~~~~
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/CoreSupport/CM1\core_cmFunc.h(453): warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+  register uint32_t result;
+  ^~~~~~~~~
+main/uart.cpp(1): warning: In file included from...
+main/uart.h(5): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_uart.h(47): warning: "Legacy v1.5.3: BaudRateStatus enumeration is deprecated. Use @ref ErrorStatus instead" [-W#warnings]
+    #warning "Legacy v1.5.3: BaudRateStatus enumeration is deprecated. Use @ref ErrorStatus instead"
+     ^
+main/uart.cpp(1): warning: In file included from...
+main/uart.h(6): warning: In file included from...
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_port.h(225): warning: "Legacy v1.5.3: @ref BitAction enumeration (Bit_RESET, Bit_SET) will be removed. Use @ref BitStatus." [-W#warnings]
+    #warning "Legacy v1.5.3: @ref BitAction enumeration (Bit_RESET, Bit_SET) will be removed. Use @ref BitStatus."
+     ^
+C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_port.h(286): warning: "Legacy v1.5.3: BitAction enumeration (Bit_RESET, Bit_SET) will be removed. In PORT_WriteBit() function use @ref BitStatus instead of @ref BitAction" [-W#warnings]
+    #warning "Legacy v1.5.3: BitAction enumeration (Bit_RESET, Bit_SET) will be removed. In PORT_WriteBit() function use @ref BitStatus instead of @ref BitAction"
+     ^
+5 warnings generated.
+compiling uart.cpp...
+linking...
+Program Size: Code=15332 RO-data=776 RW-data=6144 ZI-data=8384  
+FromELF: creating hex file...
+".\Objects\abs.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://ic.milandr.ru/soft/Keil.MDR1986BExx.2.0.3.pack
+                Keil.MDR1986BExx.2.0.3
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+   * Component: Startup Variant: 1. Rev.6+ Version: 2.0.3
+   * Component: DMA Version: 2.0.3
+   * Component: Ethernet Version: 2.0.3
+   * Component: PORT Version: 2.0.3
+   * Component: RST_CLK Version: 2.0.3
+   * Component: TIMER Version: 2.0.3
+   * Component: UART Version: 2.0.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MDR1986BE1T
+  .\RTE\_Target_1
+  C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\CMSIS\MDR32Fx\CoreSupport\CM1
+  C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\inc
+  C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\SPL\MDR32Fx\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Keil::Device:Startup:1. Rev.6+:2.0.3
+      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\system_MDR1986VE1T.h
+      Include file:  Libraries\CMSIS\MDR32Fx\CoreSupport\CM1\core_cm1.h
+      Source file:   Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\startup_MDR1986VE1T.S
+      Source file:   Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\system_MDR1986VE1T.c
+      Include file:  Libraries\SPL\MDR32Fx\MDR32F9Qx_config.h
+      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\inc\MDR1986VE1T.h
+      Include file:  Libraries\SPL\MDR32Fx\inc\IRQ_Handler_Template\MDR1986VE1T_IT.h
+      Source file:   Libraries\SPL\MDR32Fx\src\IRQ_Handler_Template\MDR1986VE1T_IT.c
+
+   * Component: Keil::Drivers:DMA:2.0.3
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_dma.h
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_dma.c
+
+   * Component: Keil::Drivers:Ethernet:2.0.3
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_eth.c
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_eth.h
+
+   * Component: Keil::Drivers:PORT:2.0.3
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_port.c
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_port.h
+
+   * Component: Keil::Drivers:RST_CLK:2.0.3
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_rst_clk.c
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_rst_clk.h
+
+   * Component: Keil::Drivers:TIMER:2.0.3
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_timer.h
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_timer.c
+
+   * Component: Keil::Drivers:UART:2.0.3
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_uart.c
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_uart.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

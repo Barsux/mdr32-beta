@@ -1,0 +1,18 @@
+--cpu Cortex-M1
+".\objects\base.o"
+".\objects\main.o"
+".\objects\port.o"
+".\objects\uart.o"
+".\objects\ethernet.o"
+".\objects\tcpip.o"
+".\objects\startup_mdr1986ve1t.o"
+".\objects\system_mdr1986ve1t.o"
+".\objects\mdr32f9qx_dma.o"
+".\objects\mdr32f9qx_eth.o"
+".\objects\mdr32f9qx_port.o"
+".\objects\mdr32f9qx_rst_clk.o"
+".\objects\mdr32f9qx_uart.o"
+".\objects\mdr32f9qx_timer.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\abs.map" -o .\Objects\abs.axf
