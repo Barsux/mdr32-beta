@@ -4,7 +4,7 @@
 #include "base.h"
 //#include "port.h"
 #include "ethernet.h"
-#include "tcpip.h"
+#include "uart.h"
 void ClockConfigure();
 
 #endif

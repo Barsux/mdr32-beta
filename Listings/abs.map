@@ -4,26 +4,28 @@ Component: ARM Compiler 6.16 Tool: armlink [5dfeaa00]
 
 Section Cross References
 
-    main.o(.text.main) refers to ethernet.o(.text._Z8eth_initRA6_h) for eth_init(unsigned char (&) [6])
-    main.o(.text.main) refers to ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef) for debug_eval(MDR_ETHERNET_TypeDef*)
-    main.o(.text.main) refers to tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef) for DoNetworkStuff(MDR_ETHERNET_TypeDef*)
+    main.o(.ARM.exidx.text._Z8cpu_initv) refers to main.o(.text._Z8cpu_initv) for [Anonymous Symbol]
+    main.o(.text._Z4initv) refers to main.o(.text._Z8cpu_initv) for cpu_init()
+    main.o(.text._Z4initv) refers to uart.o(.text._Z9uart_initv) for uart_init()
+    main.o(.text._Z4initv) refers to uart.o(.text._Z7sendstrPcz) for sendstr(char*, ...)
+    main.o(.text._Z4initv) refers to ethernet.o(.text._Z8eth_initRA6_h) for eth_init(unsigned char (&) [6])
+    main.o(.text._Z4initv) refers to main.o(.data.mac) for mac
+    main.o(.text._Z4initv) refers to system_mdr1986ve1t.o(.data.SystemCoreClock) for SystemCoreClock
+    main.o(.ARM.exidx.text._Z4initv) refers to main.o(.text._Z4initv) for [Anonymous Symbol]
     main.o(.text.main) refers to uart.o(.text._Z7sendstrPcz) for sendstr(char*, ...)
+    main.o(.text.main) refers to main.o(.text._Z4initv) for init()
+    main.o(.text.main) refers to ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef) for debug_eval(MDR_ETHERNET_TypeDef*)
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     port.o(.ARM.exidx.text._Z9port_initv) refers to port.o(.text._Z9port_initv) for [Anonymous Symbol]
-    uart.o(.text._Z12uart_tx_initv) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd) for RST_CLK_PCLKcmd
-    uart.o(.text._Z12uart_tx_initv) refers to mdr32f9qx_port.o(.text.PORT_Init) for PORT_Init
-    uart.o(.text._Z12uart_tx_initv) refers to mdr32f9qx_uart.o(.text.UART_BRGInit) for UART_BRGInit
-    uart.o(.text._Z12uart_tx_initv) refers to mdr32f9qx_uart.o(.text.UART_Init) for UART_Init
-    uart.o(.text._Z12uart_tx_initv) refers to mdr32f9qx_uart.o(.text.UART_Cmd) for UART_Cmd
-    uart.o(.text._Z12uart_tx_initv) refers to uart.o(.bss.init) for init
-    uart.o(.ARM.exidx.text._Z12uart_tx_initv) refers to uart.o(.text._Z12uart_tx_initv) for [Anonymous Symbol]
-    uart.o(.text._Z8sendchari) refers to mdr32f9qx_uart.o(.text.UART_GetFlagStatus) for UART_GetFlagStatus
-    uart.o(.text._Z8sendchari) refers to mdr32f9qx_uart.o(.text.UART_SendData) for UART_SendData
-    uart.o(.ARM.exidx.text._Z8sendchari) refers to uart.o(.text._Z8sendchari) for [Anonymous Symbol]
+    uart.o(.text._Z9uart_initv) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd) for RST_CLK_PCLKcmd
+    uart.o(.text._Z9uart_initv) refers to mdr32f9qx_port.o(.text.PORT_Init) for PORT_Init
+    uart.o(.text._Z9uart_initv) refers to mdr32f9qx_uart.o(.text.UART_BRGInit) for UART_BRGInit
+    uart.o(.text._Z9uart_initv) refers to mdr32f9qx_uart.o(.text.UART_Init) for UART_Init
+    uart.o(.text._Z9uart_initv) refers to mdr32f9qx_uart.o(.text.UART_Cmd) for UART_Cmd
+    uart.o(.ARM.exidx.text._Z9uart_initv) refers to uart.o(.text._Z9uart_initv) for [Anonymous Symbol]
+    uart.o(.ARM.exidx.text._Z8sendcharh) refers to uart.o(.text._Z8sendcharh) for [Anonymous Symbol]
     uart.o(.text._Z7sendstrPcz) refers to vsnprintf.o(.text) for vsnprintf
-    uart.o(.text._Z7sendstrPcz) refers to uart.o(.text._Z12uart_tx_initv) for uart_tx_init()
-    uart.o(.text._Z7sendstrPcz) refers to uart.o(.text._Z8sendchari) for sendchar(int)
-    uart.o(.text._Z7sendstrPcz) refers to uart.o(.bss.init) for init
+    uart.o(.text._Z7sendstrPcz) refers to uart.o(.text._Z8sendcharh) for sendchar(unsigned char)
     uart.o(.ARM.exidx.text._Z7sendstrPcz) refers to uart.o(.text._Z7sendstrPcz) for [Anonymous Symbol]
     ethernet.o(.text._Z8eth_initRA6_h) refers to mdr32f9qx_eth.o(.text.ETH_ClockDeInit) for ETH_ClockDeInit
     ethernet.o(.text._Z8eth_initRA6_h) refers to mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig) for ETH_PHY_ClockConfig
@@ -394,27 +396,6 @@ Section Cross References
     mdr32f9qx_rst_clk.o(.ARM.exidx.text.RST_CLK_RTC_HSEclkEnable) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_RTC_HSEclkEnable) for [Anonymous Symbol]
     mdr32f9qx_rst_clk.o(.ARM.exidx.text.RST_CLK_CPUclkSelectionC1) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_CPUclkSelectionC1) for [Anonymous Symbol]
     mdr32f9qx_rst_clk.o(.ARM.exidx.text.RST_CLK_GetClocksFreq) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DeInit) refers to mdr32f9qx_uart.o(.text.UART_DeInit) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.text.UART_Init) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq) for RST_CLK_GetClocksFreq
-    mdr32f9qx_uart.o(.text.UART_Init) refers to aeabi_sdivfast.o(.text_divfast) for __aeabi_uidiv
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_Init) refers to mdr32f9qx_uart.o(.text.UART_Init) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_StructInit) refers to mdr32f9qx_uart.o(.text.UART_StructInit) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_Cmd) refers to mdr32f9qx_uart.o(.text.UART_Cmd) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ITConfig) refers to mdr32f9qx_uart.o(.text.UART_ITConfig) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatus) refers to mdr32f9qx_uart.o(.text.UART_GetITStatus) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatusMasked) refers to mdr32f9qx_uart.o(.text.UART_GetITStatusMasked) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ClearITPendingBit) refers to mdr32f9qx_uart.o(.text.UART_ClearITPendingBit) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMAConfig) refers to mdr32f9qx_uart.o(.text.UART_DMAConfig) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMACmd) refers to mdr32f9qx_uart.o(.text.UART_DMACmd) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_SendData) refers to mdr32f9qx_uart.o(.text.UART_SendData) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ReceiveData) refers to mdr32f9qx_uart.o(.text.UART_ReceiveData) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_BreakLine) refers to mdr32f9qx_uart.o(.text.UART_BreakLine) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.text.UART_IrDAConfig) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq) for RST_CLK_GetClocksFreq
-    mdr32f9qx_uart.o(.text.UART_IrDAConfig) refers to aeabi_sdivfast.o(.text_divfast) for __aeabi_uidiv
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDAConfig) refers to mdr32f9qx_uart.o(.text.UART_IrDAConfig) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDACmd) refers to mdr32f9qx_uart.o(.text.UART_IrDACmd) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetFlagStatus) refers to mdr32f9qx_uart.o(.text.UART_GetFlagStatus) for [Anonymous Symbol]
-    mdr32f9qx_uart.o(.ARM.exidx.text.UART_BRGInit) refers to mdr32f9qx_uart.o(.text.UART_BRGInit) for [Anonymous Symbol]
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_DeInit) refers to mdr32f9qx_timer.o(.text.TIMER_DeInit) for [Anonymous Symbol]
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_CntInit) refers to mdr32f9qx_timer.o(.text.TIMER_CntInit) for [Anonymous Symbol]
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_CntStructInit) refers to mdr32f9qx_timer.o(.text.TIMER_CntStructInit) for [Anonymous Symbol]
@@ -475,6 +456,27 @@ Section Cross References
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_ITConfig) refers to mdr32f9qx_timer.o(.text.TIMER_ITConfig) for [Anonymous Symbol]
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_GetITStatus) refers to mdr32f9qx_timer.o(.text.TIMER_GetITStatus) for [Anonymous Symbol]
     mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_BRGInit) refers to mdr32f9qx_timer.o(.text.TIMER_BRGInit) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DeInit) refers to mdr32f9qx_uart.o(.text.UART_DeInit) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.text.UART_Init) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq) for RST_CLK_GetClocksFreq
+    mdr32f9qx_uart.o(.text.UART_Init) refers to aeabi_sdivfast.o(.text_divfast) for __aeabi_uidiv
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_Init) refers to mdr32f9qx_uart.o(.text.UART_Init) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_StructInit) refers to mdr32f9qx_uart.o(.text.UART_StructInit) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_Cmd) refers to mdr32f9qx_uart.o(.text.UART_Cmd) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ITConfig) refers to mdr32f9qx_uart.o(.text.UART_ITConfig) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatus) refers to mdr32f9qx_uart.o(.text.UART_GetITStatus) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatusMasked) refers to mdr32f9qx_uart.o(.text.UART_GetITStatusMasked) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ClearITPendingBit) refers to mdr32f9qx_uart.o(.text.UART_ClearITPendingBit) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMAConfig) refers to mdr32f9qx_uart.o(.text.UART_DMAConfig) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMACmd) refers to mdr32f9qx_uart.o(.text.UART_DMACmd) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_SendData) refers to mdr32f9qx_uart.o(.text.UART_SendData) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_ReceiveData) refers to mdr32f9qx_uart.o(.text.UART_ReceiveData) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_BreakLine) refers to mdr32f9qx_uart.o(.text.UART_BreakLine) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.text.UART_IrDAConfig) refers to mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq) for RST_CLK_GetClocksFreq
+    mdr32f9qx_uart.o(.text.UART_IrDAConfig) refers to aeabi_sdivfast.o(.text_divfast) for __aeabi_uidiv
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDAConfig) refers to mdr32f9qx_uart.o(.text.UART_IrDAConfig) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDACmd) refers to mdr32f9qx_uart.o(.text.UART_IrDACmd) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetFlagStatus) refers to mdr32f9qx_uart.o(.text.UART_GetFlagStatus) for [Anonymous Symbol]
+    mdr32f9qx_uart.o(.ARM.exidx.text.UART_BRGInit) refers to mdr32f9qx_uart.o(.text.UART_BRGInit) for [Anonymous Symbol]
     vsnprintf.o(.text) refers (Special) to _printf_a.o(.ARM.Collect$$_printf_percent$$00000006) for _printf_a
     vsnprintf.o(.text) refers (Special) to _printf_c.o(.ARM.Collect$$_printf_percent$$00000013) for _printf_c
     vsnprintf.o(.text) refers (Special) to _printf_charcount.o(.text) for _printf_charcount
@@ -782,15 +784,16 @@ Removing Unused input sections from the image.
 
     Removing base.o(.text), (0 bytes).
     Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text._Z8cpu_initv), (8 bytes).
+    Removing main.o(.ARM.exidx.text._Z4initv), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
-    Removing main.o(.rodata..L__const.main.mac), (6 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing port.o(.text), (0 bytes).
     Removing port.o(.text._Z9port_initv), (4 bytes).
     Removing port.o(.ARM.exidx.text._Z9port_initv), (8 bytes).
     Removing uart.o(.text), (0 bytes).
-    Removing uart.o(.ARM.exidx.text._Z12uart_tx_initv), (8 bytes).
-    Removing uart.o(.ARM.exidx.text._Z8sendchari), (8 bytes).
+    Removing uart.o(.ARM.exidx.text._Z9uart_initv), (8 bytes).
+    Removing uart.o(.ARM.exidx.text._Z8sendcharh), (8 bytes).
     Removing uart.o(.ARM.exidx.text._Z7sendstrPcz), (8 bytes).
     Removing ethernet.o(.text), (0 bytes).
     Removing ethernet.o(.ARM.exidx.text._Z8eth_initRA6_h), (8 bytes).
@@ -800,22 +803,31 @@ Removing Unused input sections from the image.
     Removing tcpip.o(.text._Z10TCPIP_initv), (16 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z10TCPIP_initv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z15TCPLowLevelInitv), (8 bytes).
+    Removing tcpip.o(.text._Z14TCPPassiveOpenv), (44 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z14TCPPassiveOpenv), (8 bytes).
     Removing tcpip.o(.text._Z13TCPActiveOpenv), (60 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z13TCPActiveOpenv), (8 bytes).
+    Removing tcpip.o(.text._Z18PrepareARP_REQUESTv), (156 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z18PrepareARP_REQUESTv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z18TCPStartRetryTimerv), (8 bytes).
     Removing tcpip.o(.text._Z8TCPClosev), (56 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z8TCPClosev), (8 bytes).
+    Removing tcpip.o(.text._Z18TCPReleaseRxBufferv), (16 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z18TCPReleaseRxBufferv), (8 bytes).
+    Removing tcpip.o(.text._Z19TCPTransmitTxBufferjPh), (108 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z19TCPTransmitTxBufferjPh), (8 bytes).
+    Removing tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef), (436 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef), (8 bytes).
+    Removing tcpip.o(.text._Z15TCPClockHandlerv), (76 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z15TCPClockHandlerv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z15TCPRestartTimerv), (8 bytes).
+    Removing tcpip.o(.text._Z23TCPHandleRetransmissionv), (76 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z23TCPHandleRetransmissionv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z12TCPStopTimerv), (8 bytes).
+    Removing tcpip.o(.text._Z16TCPHandleTimeoutv), (44 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z16TCPHandleTimeoutv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z16PrepareTCP_FRAMEt), (8 bytes).
+    Removing tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv), (344 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z21PrepareTCP_DATA_FRAMEv), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z24ProcessEthBroadcastFramePjj), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z17PrepareARP_ANSWERv), (8 bytes).
@@ -828,9 +840,14 @@ Removing Unused input sections from the image.
     Removing tcpip.o(.ARM.exidx.text._Z12CalcChecksumPvtt), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z19standard_chksum_optPvjh), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z9WriteDWBEPhj), (8 bytes).
+    Removing tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh), (140 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z16CalcChecksum_TCPPvS_tjh), (8 bytes).
     Removing tcpip.o(.ARM.exidx.text._Z9SwapBytest), (8 bytes).
+    Removing tcpip.o(.bss.TCPTxDataCount), (4 bytes).
+    Removing tcpip.o(.data.Ident), (2 bytes).
+    Removing tcpip.o(.bss.pData), (4 bytes).
     Removing tcpip.o(.bss.RecdFrameLength), (4 bytes).
+    Removing tcpip.o(.bss.TxFrame1Size), (4 bytes).
     Removing tcpip.o(.rodata._ZL4MyIP), (4 bytes).
     Removing system_mdr1986ve1t.o(.text), (0 bytes).
     Removing system_mdr1986ve1t.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
@@ -891,7 +908,9 @@ Removing Unused input sections from the image.
     Removing mdr32f9qx_eth.o(.ARM.exidx.text.ETH_WritePHYRegister), (8 bytes).
     Removing mdr32f9qx_eth.o(.ARM.exidx.text.ETH_ReceivedFrame), (8 bytes).
     Removing mdr32f9qx_eth.o(.ARM.exidx.text.ETH_DMAFrameRx), (8 bytes).
+    Removing mdr32f9qx_eth.o(.text.ETH_SendFrame), (252 bytes).
     Removing mdr32f9qx_eth.o(.ARM.exidx.text.ETH_SendFrame), (8 bytes).
+    Removing mdr32f9qx_eth.o(.text.ETH_DMAFrameTx), (84 bytes).
     Removing mdr32f9qx_eth.o(.ARM.exidx.text.ETH_DMAFrameTx), (8 bytes).
     Removing mdr32f9qx_port.o(.text), (0 bytes).
     Removing mdr32f9qx_port.o(.text.PORT_DeInit), (20 bytes).
@@ -981,42 +1000,14 @@ Removing Unused input sections from the image.
     Removing mdr32f9qx_rst_clk.o(.text.RST_CLK_CPUclkSelectionC1), (20 bytes).
     Removing mdr32f9qx_rst_clk.o(.ARM.exidx.text.RST_CLK_CPUclkSelectionC1), (8 bytes).
     Removing mdr32f9qx_rst_clk.o(.ARM.exidx.text.RST_CLK_GetClocksFreq), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text), (0 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_DeInit), (34 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DeInit), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_Init), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_StructInit), (20 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_StructInit), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_Cmd), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_ITConfig), (20 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ITConfig), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_GetITStatus), (12 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatus), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_GetITStatusMasked), (10 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatusMasked), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_ClearITPendingBit), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ClearITPendingBit), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_DMAConfig), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMAConfig), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_DMACmd), (22 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMACmd), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_SendData), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_ReceiveData), (6 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ReceiveData), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_BreakLine), (28 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_BreakLine), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_IrDAConfig), (40 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDAConfig), (8 bytes).
-    Removing mdr32f9qx_uart.o(.text.UART_IrDACmd), (28 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDACmd), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetFlagStatus), (8 bytes).
-    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_BRGInit), (8 bytes).
     Removing mdr32f9qx_timer.o(.text), (0 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_DeInit), (8 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_CntInit), (8 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_CntStructInit), (8 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_Cmd), (8 bytes).
+    Removing mdr32f9qx_timer.o(.text.TIMER_SetCounter), (4 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_SetCounter), (8 bytes).
+    Removing mdr32f9qx_timer.o(.text.TIMER_GetCounter), (4 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_GetCounter), (8 bytes).
     Removing mdr32f9qx_timer.o(.text.TIMER_SetCntPrescaler), (4 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_SetCntPrescaler), (8 bytes).
@@ -1109,7 +1100,9 @@ Removing Unused input sections from the image.
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_ChnOutDTGConfig), (8 bytes).
     Removing mdr32f9qx_timer.o(.text.TIMER_GetStatus), (4 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_GetStatus), (8 bytes).
+    Removing mdr32f9qx_timer.o(.text.TIMER_GetFlagStatus), (10 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_GetFlagStatus), (8 bytes).
+    Removing mdr32f9qx_timer.o(.text.TIMER_ClearFlag), (6 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_ClearFlag), (8 bytes).
     Removing mdr32f9qx_timer.o(.text.TIMER_DMACmd), (32 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_DMACmd), (8 bytes).
@@ -1118,8 +1111,40 @@ Removing Unused input sections from the image.
     Removing mdr32f9qx_timer.o(.text.TIMER_GetITStatus), (14 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_GetITStatus), (8 bytes).
     Removing mdr32f9qx_timer.o(.ARM.exidx.text.TIMER_BRGInit), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text), (0 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_DeInit), (34 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DeInit), (8 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_Init), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_StructInit), (20 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_StructInit), (8 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_Cmd), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_ITConfig), (20 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ITConfig), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_GetITStatus), (12 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatus), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_GetITStatusMasked), (10 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetITStatusMasked), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_ClearITPendingBit), (8 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ClearITPendingBit), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_DMAConfig), (8 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMAConfig), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_DMACmd), (22 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_DMACmd), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_SendData), (4 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_SendData), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_ReceiveData), (6 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_ReceiveData), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_BreakLine), (28 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_BreakLine), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_IrDAConfig), (40 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDAConfig), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_IrDACmd), (28 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_IrDACmd), (8 bytes).
+    Removing mdr32f9qx_uart.o(.text.UART_GetFlagStatus), (10 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_GetFlagStatus), (8 bytes).
+    Removing mdr32f9qx_uart.o(.ARM.exidx.text.UART_BRGInit), (8 bytes).
 
-338 unused section(s) (total 4506 bytes) removed from the image.
+361 unused section(s) (total 6344 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1416,299 +1441,235 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00001cc0   Section        0  mdr32f9qx_eth.o(.text.ETH_ClockDeInit)
     __arm_cp.0_1                             0x00001ccc   Number         4  mdr32f9qx_eth.o(.text.ETH_ClockDeInit)
     [Anonymous Symbol]                       0x00001cd0   Section        0  mdr32f9qx_eth.o(.text.ETH_DMAFrameRx)
-    [Anonymous Symbol]                       0x00001d1c   Section        0  mdr32f9qx_eth.o(.text.ETH_DMAFrameTx)
-    __arm_cp.26_0                            0x00001d64   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameTx)
-    __arm_cp.26_1                            0x00001d68   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameTx)
-    __arm_cp.26_2                            0x00001d6c   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameTx)
-    [Anonymous Symbol]                       0x00001d70   Section        0  mdr32f9qx_eth.o(.text.ETH_DMAPrepare)
-    [Anonymous Symbol]                       0x00001da8   Section        0  mdr32f9qx_eth.o(.text.ETH_DeInit)
-    __arm_cp.7_0                             0x00001e00   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
-    __arm_cp.7_1                             0x00001e04   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
-    __arm_cp.7_2                             0x00001e08   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
-    [Anonymous Symbol]                       0x00001e0c   Section        0  mdr32f9qx_eth.o(.text.ETH_GetMACITStatusRegister)
-    [Anonymous Symbol]                       0x00001e10   Section        0  mdr32f9qx_eth.o(.text.ETH_GetPHYStatus)
-    [Anonymous Symbol]                       0x00001e1a   Section        0  mdr32f9qx_eth.o(.text.ETH_Init)
-    [Anonymous Symbol]                       0x00001f2c   Section        0  mdr32f9qx_eth.o(.text.ETH_MACReceptionCmd)
-    [Anonymous Symbol]                       0x00001f40   Section        0  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
-    __arm_cp.12_0                            0x00001f54   Number         4  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
-    [Anonymous Symbol]                       0x00001f58   Section        0  mdr32f9qx_eth.o(.text.ETH_PHYCmd)
-    [Anonymous Symbol]                       0x00001f6c   Section        0  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
-    __arm_cp.1_0                             0x00001f84   Number         4  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
-    __arm_cp.1_1                             0x00001f88   Number         4  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
-    [Anonymous Symbol]                       0x00001f8c   Section        0  mdr32f9qx_eth.o(.text.ETH_PHY_Reset)
-    [Anonymous Symbol]                       0x00001fa8   Section        0  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
-    __arm_cp.23_0                            0x0000210c   Number         4  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
-    [Anonymous Symbol]                       0x00002110   Section        0  mdr32f9qx_eth.o(.text.ETH_SendFrame)
-    __arm_cp.25_0                            0x00002208   Number         4  mdr32f9qx_eth.o(.text.ETH_SendFrame)
-    [Anonymous Symbol]                       0x0000220c   Section        0  mdr32f9qx_eth.o(.text.ETH_Start)
-    [Anonymous Symbol]                       0x00002234   Section        0  mdr32f9qx_eth.o(.text.ETH_StructInit)
-    __arm_cp.8_0                             0x0000229c   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
-    __arm_cp.8_1                             0x000022a0   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
-    __arm_cp.8_2                             0x000022a4   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
-    NVIC_ClearPendingIRQ                     0x000022a9   Thumb Code     8  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
-    [Anonymous Symbol]                       0x000022a8   Section        0  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
-    __arm_cp.1_0                             0x000022b0   Number         4  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
-    [Anonymous Symbol]                       0x000022b4   Section        0  mdr32f9qx_port.o(.text.PORT_Init)
-    __arm_cp.1_0                             0x00002398   Number         4  mdr32f9qx_port.o(.text.PORT_Init)
-    [Anonymous Symbol]                       0x0000239c   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq)
-    [Anonymous Symbol]                       0x000024a0   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
-    __arm_cp.8_0                             0x000024bc   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
-    __arm_cp.8_1                             0x000024c0   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
-    [Anonymous Symbol]                       0x000024c4   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
-    __arm_cp.9_0                             0x000024e4   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
-    [Anonymous Symbol]                       0x000024e8   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2status)
-    [Anonymous Symbol]                       0x00002514   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
-    __arm_cp.2_0                             0x0000252c   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
-    [Anonymous Symbol]                       0x00002530   Section        0  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    __arm_cp.0_0                             0x00002584   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    __arm_cp.0_1                             0x00002588   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    __arm_cp.0_2                             0x0000258c   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    __arm_cp.0_3                             0x00002590   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    __arm_cp.0_4                             0x00002594   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    [Anonymous Symbol]                       0x00002598   Section        0  system_mdr1986ve1t.o(.text.SystemInit)
-    __arm_cp.1_0                             0x000025c0   Number         4  system_mdr1986ve1t.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000025c4   Section        0  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_0                            0x00002624   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_1                            0x00002628   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_2                            0x0000262c   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_3                            0x00002630   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_4                            0x00002634   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    __arm_cp.57_5                            0x00002638   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    [Anonymous Symbol]                       0x0000263c   Section        0  mdr32f9qx_timer.o(.text.TIMER_ClearFlag)
-    [Anonymous Symbol]                       0x00002642   Section        0  mdr32f9qx_timer.o(.text.TIMER_Cmd)
-    [Anonymous Symbol]                       0x00002652   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntEventSourceConfig)
-    [Anonymous Symbol]                       0x00002660   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntInit)
-    [Anonymous Symbol]                       0x00002694   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntStructInit)
-    [Anonymous Symbol]                       0x000026a8   Section        0  mdr32f9qx_timer.o(.text.TIMER_DeInit)
-    [Anonymous Symbol]                       0x000026fa   Section        0  mdr32f9qx_timer.o(.text.TIMER_GetCounter)
-    [Anonymous Symbol]                       0x000026fe   Section        0  mdr32f9qx_timer.o(.text.TIMER_GetFlagStatus)
-    [Anonymous Symbol]                       0x00002708   Section        0  mdr32f9qx_timer.o(.text.TIMER_SetCounter)
-    [Anonymous Symbol]                       0x0000270c   Section        0  mdr32f9qx_uart.o(.text.UART_BRGInit)
-    __arm_cp.16_3                            0x00002740   Number         4  mdr32f9qx_uart.o(.text.UART_BRGInit)
-    [Anonymous Symbol]                       0x00002744   Section        0  mdr32f9qx_uart.o(.text.UART_Cmd)
-    __arm_cp.3_0                             0x0000275c   Number         4  mdr32f9qx_uart.o(.text.UART_Cmd)
-    [Anonymous Symbol]                       0x00002760   Section        0  mdr32f9qx_uart.o(.text.UART_GetFlagStatus)
-    [Anonymous Symbol]                       0x0000276c   Section        0  mdr32f9qx_uart.o(.text.UART_Init)
-    __arm_cp.1_0                             0x000027f8   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
-    __arm_cp.1_1                             0x000027fc   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
-    __arm_cp.1_3                             0x00002800   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
-    [Anonymous Symbol]                       0x00002804   Section        0  mdr32f9qx_uart.o(.text.UART_SendData)
-    [Anonymous Symbol]                       0x00002808   Section        0  ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef)
-    [Anonymous Symbol]                       0x00002848   Section        0  tcpip.o(.text._Z12CalcChecksumPvtt)
-    __arm_cp.26_0                            0x0000289c   Number         4  tcpip.o(.text._Z12CalcChecksumPvtt)
-    __arm_cp.26_1                            0x000028a0   Number         4  tcpip.o(.text._Z12CalcChecksumPvtt)
-    __arm_cp.26_2                            0x000028a4   Number         4  tcpip.o(.text._Z12CalcChecksumPvtt)
-    [Anonymous Symbol]                       0x000028a8   Section        0  tcpip.o(.text._Z12TCPStopTimerv)
-    [Anonymous Symbol]                       0x000028b4   Section        0  uart.o(.text._Z12uart_tx_initv)
-    __arm_cp.0_0                             0x0000291c   Number         4  uart.o(.text._Z12uart_tx_initv)
-    __arm_cp.0_1                             0x00002920   Number         4  uart.o(.text._Z12uart_tx_initv)
-    __arm_cp.0_2                             0x00002924   Number         4  uart.o(.text._Z12uart_tx_initv)
-    __arm_cp.0_3                             0x00002928   Number         4  uart.o(.text._Z12uart_tx_initv)
-    __arm_cp.0_4                             0x0000292c   Number         4  uart.o(.text._Z12uart_tx_initv)
-    [Anonymous Symbol]                       0x00002930   Section        0  tcpip.o(.text._Z13CopyFromFramePvPtj)
-    [Anonymous Symbol]                       0x00002968   Section        0  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_0                            0x00002ae0   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_2                            0x00002ae4   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_3                            0x00002ae8   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_6                            0x00002aec   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_7                            0x00002af0   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_8                            0x00002af4   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_9                            0x00002af8   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_11                           0x00002afc   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_13                           0x00002b00   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    __arm_cp.10_14                           0x00002b04   Number         4  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    [Anonymous Symbol]                       0x00002b08   Section        0  tcpip.o(.text._Z14TCPPassiveOpenv)
-    __arm_cp.3_0                             0x00002b28   Number         4  tcpip.o(.text._Z14TCPPassiveOpenv)
-    __arm_cp.3_1                             0x00002b2c   Number         4  tcpip.o(.text._Z14TCPPassiveOpenv)
-    __arm_cp.3_2                             0x00002b30   Number         4  tcpip.o(.text._Z14TCPPassiveOpenv)
-    [Anonymous Symbol]                       0x00002b34   Section        0  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_0                            0x00002de8   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_2                            0x00002dec   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_3                            0x00002df0   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_5                            0x00002df4   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_6                            0x00002df8   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_8                            0x00002dfc   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_9                            0x00002e00   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_11                           0x00002e04   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_12                           0x00002e08   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_13                           0x00002e0c   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_14                           0x00002e10   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_15                           0x00002e14   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    __arm_cp.22_17                           0x00002e18   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
-    [Anonymous Symbol]                       0x00002e1c   Section        0  tcpip.o(.text._Z15TCPClockHandlerv)
-    __arm_cp.11_1                            0x00002e58   Number         4  tcpip.o(.text._Z15TCPClockHandlerv)
-    [Anonymous Symbol]                       0x00002e5c   Section        0  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_1                             0x00002ec8   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_2                             0x00002ecc   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_3                             0x00002ed0   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_4                             0x00002ed4   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_5                             0x00002ed8   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_7                             0x00002edc   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    __arm_cp.2_8                             0x00002ee0   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
-    [Anonymous Symbol]                       0x00002ee4   Section        0  tcpip.o(.text._Z15TCPRestartTimerv)
-    __arm_cp.12_0                            0x00002eec   Number         4  tcpip.o(.text._Z15TCPRestartTimerv)
-    [Anonymous Symbol]                       0x00002ef0   Section        0  tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh)
-    __arm_cp.29_0                            0x00002f70   Number         4  tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh)
-    __arm_cp.29_1                            0x00002f74   Number         4  tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh)
-    __arm_cp.29_2                            0x00002f78   Number         4  tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh)
-    [Anonymous Symbol]                       0x00002f7c   Section        0  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_1                            0x00003084   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_4                            0x00003088   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_5                            0x0000308c   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_6                            0x00003090   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_7                            0x00003094   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_9                            0x00003098   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_10                           0x0000309c   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_11                           0x000030a0   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_12                           0x000030a4   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_13                           0x000030a8   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_14                           0x000030ac   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    __arm_cp.16_15                           0x000030b0   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    [Anonymous Symbol]                       0x000030b4   Section        0  tcpip.o(.text._Z16ProcessICMPFramev)
-    [Anonymous Symbol]                       0x000030d0   Section        0  tcpip.o(.text._Z16TCPHandleTimeoutv)
-    __arm_cp.15_0                            0x000030f0   Number         4  tcpip.o(.text._Z16TCPHandleTimeoutv)
-    __arm_cp.15_1                            0x000030f4   Number         4  tcpip.o(.text._Z16TCPHandleTimeoutv)
-    __arm_cp.15_2                            0x000030f8   Number         4  tcpip.o(.text._Z16TCPHandleTimeoutv)
-    [Anonymous Symbol]                       0x000030fc   Section        0  tcpip.o(.text._Z17PrepareARP_ANSWERv)
-    __arm_cp.19_3                            0x0000315c   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
-    __arm_cp.19_5                            0x00003160   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
-    __arm_cp.19_9                            0x00003164   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
-    [Anonymous Symbol]                       0x00003168   Section        0  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_0                            0x00003288   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_1                            0x0000328c   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_2                            0x00003290   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_3                            0x00003294   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_5                            0x00003298   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_6                            0x0000329c   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_7                            0x000032a0   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_10                           0x000032a4   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    __arm_cp.20_11                           0x000032a8   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    [Anonymous Symbol]                       0x000032ac   Section        0  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_0                             0x00003318   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_1                             0x0000331c   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_2                             0x00003320   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_3                             0x00003324   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_4                             0x00003328   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_5                             0x0000332c   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_6                             0x00003330   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_7                             0x00003334   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_8                             0x00003338   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_9                             0x0000333c   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    __arm_cp.5_10                            0x00003340   Number         4  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    [Anonymous Symbol]                       0x00003344   Section        0  tcpip.o(.text._Z18TCPReleaseRxBufferv)
-    [Anonymous Symbol]                       0x00003350   Section        0  tcpip.o(.text._Z18TCPStartRetryTimerv)
-    __arm_cp.6_0                             0x00003368   Number         4  tcpip.o(.text._Z18TCPStartRetryTimerv)
-    __arm_cp.6_2                             0x0000336c   Number         4  tcpip.o(.text._Z18TCPStartRetryTimerv)
-    [Anonymous Symbol]                       0x00003370   Section        0  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    __arm_cp.9_0                             0x000033bc   Number         4  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    __arm_cp.9_1                             0x000033c0   Number         4  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    __arm_cp.9_6                             0x000033c4   Number         4  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    __arm_cp.9_7                             0x000033c8   Number         4  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    [Anonymous Symbol]                       0x000033cc   Section        0  tcpip.o(.text._Z19standard_chksum_optPvjh)
-    __arm_cp.27_1                            0x00003480   Number         4  tcpip.o(.text._Z19standard_chksum_optPvjh)
-    __arm_cp.27_2                            0x00003484   Number         4  tcpip.o(.text._Z19standard_chksum_optPvjh)
-    [Anonymous Symbol]                       0x00003488   Section        0  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_0                            0x00003590   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_2                            0x00003594   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_3                            0x00003598   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_4                            0x0000359c   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_5                            0x000035a0   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_6                            0x000035a4   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_7                            0x000035a8   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_10                           0x000035ac   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_11                           0x000035b0   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_12                           0x000035b4   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_13                           0x000035b8   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_14                           0x000035bc   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_15                           0x000035c0   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_16                           0x000035c4   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_17                           0x000035c8   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_18                           0x000035cc   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    __arm_cp.17_19                           0x000035d0   Number         4  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    [Anonymous Symbol]                       0x000035d4   Section        0  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
-    __arm_cp.24_0                            0x000035e8   Number         4  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
-    __arm_cp.24_1                            0x000035ec   Number         4  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
-    [Anonymous Symbol]                       0x000035f0   Section        0  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_0                            0x000036b4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_1                            0x000036b8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_2                            0x000036bc   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_3                            0x000036c0   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_5                            0x000036c4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_6                            0x000036c8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_7                            0x000036cc   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_8                            0x000036d0   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_10                           0x000036d4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    __arm_cp.23_11                           0x000036d8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    [Anonymous Symbol]                       0x000036dc   Section        0  tcpip.o(.text._Z23TCPHandleRetransmissionv)
-    __arm_cp.13_0                            0x00003720   Number         4  tcpip.o(.text._Z23TCPHandleRetransmissionv)
-    __arm_cp.13_1                            0x00003724   Number         4  tcpip.o(.text._Z23TCPHandleRetransmissionv)
-    [Anonymous Symbol]                       0x00003728   Section        0  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    __arm_cp.18_0                            0x00003794   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    __arm_cp.18_1                            0x00003798   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    __arm_cp.18_2                            0x0000379c   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    __arm_cp.18_3                            0x000037a0   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    __arm_cp.18_4                            0x000037a4   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    [Anonymous Symbol]                       0x000037a8   Section        0  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_0                             0x0000381c   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_1                             0x00003820   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_2                             0x00003824   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_3                             0x00003828   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_4                             0x0000382c   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_5                             0x00003830   Number         4  uart.o(.text._Z7sendstrPcz)
-    __arm_cp.2_6                             0x00003834   Number         4  uart.o(.text._Z7sendstrPcz)
-    [Anonymous Symbol]                       0x00003838   Section        0  tcpip.o(.text._Z8WriteWBEPht)
-    [Anonymous Symbol]                       0x00003840   Section        0  ethernet.o(.text._Z8eth_initRA6_h)
-    __arm_cp.0_0                             0x000038ec   Number         4  ethernet.o(.text._Z8eth_initRA6_h)
-    [Anonymous Symbol]                       0x000038f0   Section        0  uart.o(.text._Z8sendchari)
-    __arm_cp.1_0                             0x00003910   Number         4  uart.o(.text._Z8sendchari)
-    [Anonymous Symbol]                       0x00003914   Section        0  tcpip.o(.text._Z9SwapBytest)
-    [Anonymous Symbol]                       0x00003918   Section        0  tcpip.o(.text._Z9WriteDWBEPhj)
-    [Anonymous Symbol]                       0x00003928   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x000039a8   Number         4  main.o(.text.main)
-    __arm_cp.0_1                             0x000039ac   Number         4  main.o(.text.main)
-    __arm_cp.0_2                             0x000039b0   Number         4  main.o(.text.main)
-    __arm_cp.0_3                             0x000039b4   Number         4  main.o(.text.main)
-    __arm_cp.0_4                             0x000039b8   Number         4  main.o(.text.main)
-    __arm_cp.0_5                             0x000039bc   Number         4  main.o(.text.main)
-    .text_divfast                            0x000039c8   Section      502  aeabi_sdivfast.o(.text_divfast)
-    i.__ARM_common_ll_muluu                  0x00003bbe   Section        0  btod.o(i.__ARM_common_ll_muluu)
-    i.__ARM_fpclassify                       0x00003bf0   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i._is_digit                              0x00003c1c   Section        0  __printf_wp.o(i._is_digit)
-    locale$$code                             0x00003c2c   Section       44  lc_numeric_c.o(locale$$code)
-    locale$$code                             0x00003c58   Section       44  lc_ctype_c.o(locale$$code)
-    x$fpl$printf1                            0x00003c84   Section       16  printf1.o(x$fpl$printf1)
-    x$fpl$printf2                            0x00003c94   Section       16  printf2.o(x$fpl$printf2)
-    initial_mbstate                          0x00003ca4   Data           8  _printf_wctomb.o(.constdata)
-    .constdata                               0x00003ca4   Section        8  _printf_wctomb.o(.constdata)
-    x$fpl$usenofp                            0x00003ca4   Section        0  usenofp.o(x$fpl$usenofp)
-    uc_hextab                                0x00003cac   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    .constdata                               0x00003cac   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
-    lc_hextab                                0x00003cc0   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    maptable                                 0x00003cd4   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .constdata                               0x00003cd4   Section       17  __printf_flags_ss_wp.o(.constdata)
-    lc_hextab                                0x00003ce5   Data          19  _printf_fp_hex.o(.constdata)
-    .constdata                               0x00003ce5   Section       38  _printf_fp_hex.o(.constdata)
-    uc_hextab                                0x00003cf8   Data          19  _printf_fp_hex.o(.constdata)
-    tenpwrs_x                                0x00003d0c   Data          60  bigflt0.o(.constdata)
-    .constdata                               0x00003d0c   Section      148  bigflt0.o(.constdata)
-    tenpwrs_i                                0x00003d48   Data          64  bigflt0.o(.constdata)
-    locale$$data                             0x00003dc0   Section       28  lc_numeric_c.o(locale$$data)
-    __lcnum_c_name                           0x00003dc4   Data           2  lc_numeric_c.o(locale$$data)
-    __lcnum_c_start                          0x00003dcc   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_point                          0x00003dd8   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_thousands                      0x00003dda   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_grouping                       0x00003ddb   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_end                            0x00003ddc   Data           0  lc_numeric_c.o(locale$$data)
-    locale$$data                             0x00003ddc   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x00003de0   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x00003de8   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x00003eec   Data           0  lc_ctype_c.o(locale$$data)
+    __arm_cp.24_0                            0x00001d1c   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameRx)
+    __arm_cp.24_1                            0x00001d20   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameRx)
+    __arm_cp.24_2                            0x00001d24   Number         4  mdr32f9qx_eth.o(.text.ETH_DMAFrameRx)
+    [Anonymous Symbol]                       0x00001d28   Section        0  mdr32f9qx_eth.o(.text.ETH_DMAPrepare)
+    [Anonymous Symbol]                       0x00001d60   Section        0  mdr32f9qx_eth.o(.text.ETH_DeInit)
+    __arm_cp.7_0                             0x00001db8   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
+    __arm_cp.7_1                             0x00001dbc   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
+    __arm_cp.7_2                             0x00001dc0   Number         4  mdr32f9qx_eth.o(.text.ETH_DeInit)
+    [Anonymous Symbol]                       0x00001dc4   Section        0  mdr32f9qx_eth.o(.text.ETH_GetMACITStatusRegister)
+    [Anonymous Symbol]                       0x00001dc8   Section        0  mdr32f9qx_eth.o(.text.ETH_GetPHYStatus)
+    [Anonymous Symbol]                       0x00001dd2   Section        0  mdr32f9qx_eth.o(.text.ETH_Init)
+    [Anonymous Symbol]                       0x00001ee4   Section        0  mdr32f9qx_eth.o(.text.ETH_MACReceptionCmd)
+    [Anonymous Symbol]                       0x00001ef8   Section        0  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
+    __arm_cp.12_0                            0x00001f0c   Number         4  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
+    [Anonymous Symbol]                       0x00001f10   Section        0  mdr32f9qx_eth.o(.text.ETH_PHYCmd)
+    [Anonymous Symbol]                       0x00001f24   Section        0  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
+    __arm_cp.1_0                             0x00001f3c   Number         4  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
+    __arm_cp.1_1                             0x00001f40   Number         4  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
+    [Anonymous Symbol]                       0x00001f44   Section        0  mdr32f9qx_eth.o(.text.ETH_PHY_Reset)
+    [Anonymous Symbol]                       0x00001f60   Section        0  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
+    __arm_cp.23_0                            0x000020c4   Number         4  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
+    [Anonymous Symbol]                       0x000020c8   Section        0  mdr32f9qx_eth.o(.text.ETH_Start)
+    [Anonymous Symbol]                       0x000020f0   Section        0  mdr32f9qx_eth.o(.text.ETH_StructInit)
+    __arm_cp.8_0                             0x00002158   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
+    __arm_cp.8_1                             0x0000215c   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
+    __arm_cp.8_2                             0x00002160   Number         4  mdr32f9qx_eth.o(.text.ETH_StructInit)
+    NVIC_ClearPendingIRQ                     0x00002165   Thumb Code     8  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
+    [Anonymous Symbol]                       0x00002164   Section        0  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
+    __arm_cp.1_0                             0x0000216c   Number         4  mdr32f9qx_dma.o(.text.NVIC_ClearPendingIRQ)
+    [Anonymous Symbol]                       0x00002170   Section        0  mdr32f9qx_port.o(.text.PORT_Init)
+    __arm_cp.1_0                             0x00002254   Number         4  mdr32f9qx_port.o(.text.PORT_Init)
+    [Anonymous Symbol]                       0x00002258   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq)
+    [Anonymous Symbol]                       0x0000235c   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
+    __arm_cp.8_0                             0x00002378   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
+    __arm_cp.8_1                             0x0000237c   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
+    [Anonymous Symbol]                       0x00002380   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
+    __arm_cp.9_0                             0x000023a0   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
+    [Anonymous Symbol]                       0x000023a4   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2status)
+    [Anonymous Symbol]                       0x000023d0   Section        0  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
+    __arm_cp.2_0                             0x000023e8   Number         4  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
+    [Anonymous Symbol]                       0x000023ec   Section        0  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_0                             0x00002440   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_1                             0x00002444   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_2                             0x00002448   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_3                             0x0000244c   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_4                             0x00002450   Number         4  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x00002454   Section        0  system_mdr1986ve1t.o(.text.SystemInit)
+    __arm_cp.1_0                             0x0000247c   Number         4  system_mdr1986ve1t.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00002480   Section        0  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_0                            0x000024e0   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_1                            0x000024e4   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_2                            0x000024e8   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_3                            0x000024ec   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_4                            0x000024f0   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    __arm_cp.57_5                            0x000024f4   Number         4  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    [Anonymous Symbol]                       0x000024f8   Section        0  mdr32f9qx_timer.o(.text.TIMER_Cmd)
+    [Anonymous Symbol]                       0x00002508   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntEventSourceConfig)
+    [Anonymous Symbol]                       0x00002516   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntInit)
+    [Anonymous Symbol]                       0x0000254a   Section        0  mdr32f9qx_timer.o(.text.TIMER_CntStructInit)
+    [Anonymous Symbol]                       0x0000255e   Section        0  mdr32f9qx_timer.o(.text.TIMER_DeInit)
+    [Anonymous Symbol]                       0x000025b0   Section        0  mdr32f9qx_uart.o(.text.UART_BRGInit)
+    __arm_cp.16_3                            0x000025e4   Number         4  mdr32f9qx_uart.o(.text.UART_BRGInit)
+    [Anonymous Symbol]                       0x000025e8   Section        0  mdr32f9qx_uart.o(.text.UART_Cmd)
+    __arm_cp.3_0                             0x00002600   Number         4  mdr32f9qx_uart.o(.text.UART_Cmd)
+    [Anonymous Symbol]                       0x00002604   Section        0  mdr32f9qx_uart.o(.text.UART_Init)
+    __arm_cp.1_0                             0x00002690   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
+    __arm_cp.1_1                             0x00002694   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
+    __arm_cp.1_2                             0x00002698   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
+    __arm_cp.1_3                             0x0000269c   Number         4  mdr32f9qx_uart.o(.text.UART_Init)
+    [Anonymous Symbol]                       0x000026a0   Section        0  ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef)
+    [Anonymous Symbol]                       0x000026e0   Section        0  tcpip.o(.text._Z12CalcChecksumPvtt)
+    __arm_cp.26_1                            0x00002734   Number         4  tcpip.o(.text._Z12CalcChecksumPvtt)
+    __arm_cp.26_2                            0x00002738   Number         4  tcpip.o(.text._Z12CalcChecksumPvtt)
+    [Anonymous Symbol]                       0x0000273c   Section        0  tcpip.o(.text._Z12TCPStopTimerv)
+    [Anonymous Symbol]                       0x00002748   Section        0  tcpip.o(.text._Z13CopyFromFramePvPtj)
+    [Anonymous Symbol]                       0x00002780   Section        0  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_0                            0x00002a34   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_2                            0x00002a38   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_3                            0x00002a3c   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_5                            0x00002a40   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_6                            0x00002a44   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_7                            0x00002a48   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_8                            0x00002a4c   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_9                            0x00002a50   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_12                           0x00002a54   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_13                           0x00002a58   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_14                           0x00002a5c   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_15                           0x00002a60   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_16                           0x00002a64   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    __arm_cp.22_17                           0x00002a68   Number         4  tcpip.o(.text._Z15ProcessTCPFramev)
+    [Anonymous Symbol]                       0x00002a6c   Section        0  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_0                             0x00002ad8   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_1                             0x00002adc   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_2                             0x00002ae0   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_3                             0x00002ae4   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_4                             0x00002ae8   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_5                             0x00002aec   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_7                             0x00002af0   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    __arm_cp.2_8                             0x00002af4   Number         4  tcpip.o(.text._Z15TCPLowLevelInitv)
+    [Anonymous Symbol]                       0x00002af8   Section        0  tcpip.o(.text._Z15TCPRestartTimerv)
+    [Anonymous Symbol]                       0x00002b00   Section        0  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_1                            0x00002c08   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_4                            0x00002c0c   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_5                            0x00002c10   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_6                            0x00002c14   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_7                            0x00002c18   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_8                            0x00002c1c   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_9                            0x00002c20   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_10                           0x00002c24   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_11                           0x00002c28   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_12                           0x00002c2c   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_13                           0x00002c30   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_14                           0x00002c34   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    __arm_cp.16_15                           0x00002c38   Number         4  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    [Anonymous Symbol]                       0x00002c3c   Section        0  tcpip.o(.text._Z16ProcessICMPFramev)
+    [Anonymous Symbol]                       0x00002c58   Section        0  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_0                            0x00002cb8   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_2                            0x00002cbc   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_3                            0x00002cc0   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_4                            0x00002cc4   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_5                            0x00002cc8   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_6                            0x00002ccc   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    __arm_cp.19_9                            0x00002cd0   Number         4  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    [Anonymous Symbol]                       0x00002cd4   Section        0  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_0                            0x00002df4   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_2                            0x00002df8   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_4                            0x00002dfc   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_5                            0x00002e00   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_8                            0x00002e04   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    __arm_cp.20_11                           0x00002e08   Number         4  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    [Anonymous Symbol]                       0x00002e0c   Section        0  tcpip.o(.text._Z18TCPStartRetryTimerv)
+    __arm_cp.6_0                             0x00002e24   Number         4  tcpip.o(.text._Z18TCPStartRetryTimerv)
+    __arm_cp.6_1                             0x00002e28   Number         4  tcpip.o(.text._Z18TCPStartRetryTimerv)
+    __arm_cp.6_2                             0x00002e2c   Number         4  tcpip.o(.text._Z18TCPStartRetryTimerv)
+    [Anonymous Symbol]                       0x00002e30   Section        0  tcpip.o(.text._Z19standard_chksum_optPvjh)
+    __arm_cp.27_0                            0x00002ee4   Number         4  tcpip.o(.text._Z19standard_chksum_optPvjh)
+    __arm_cp.27_1                            0x00002ee8   Number         4  tcpip.o(.text._Z19standard_chksum_optPvjh)
+    __arm_cp.27_2                            0x00002eec   Number         4  tcpip.o(.text._Z19standard_chksum_optPvjh)
+    [Anonymous Symbol]                       0x00002ef0   Section        0  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
+    __arm_cp.24_0                            0x00002f04   Number         4  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
+    __arm_cp.24_1                            0x00002f08   Number         4  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
+    [Anonymous Symbol]                       0x00002f0c   Section        0  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_0                            0x00002fd0   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_1                            0x00002fd4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_2                            0x00002fd8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_3                            0x00002fdc   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_4                            0x00002fe0   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_5                            0x00002fe4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_6                            0x00002fe8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_7                            0x00002fec   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_8                            0x00002ff0   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_9                            0x00002ff4   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_10                           0x00002ff8   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_11                           0x00002ffc   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    __arm_cp.23_12                           0x00003000   Number         4  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    [Anonymous Symbol]                       0x00003004   Section        0  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    __arm_cp.18_0                            0x00003070   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    __arm_cp.18_1                            0x00003074   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    __arm_cp.18_2                            0x00003078   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    __arm_cp.18_3                            0x0000307c   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    __arm_cp.18_4                            0x00003080   Number         4  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    [Anonymous Symbol]                       0x00003084   Section        0  main.o(.text._Z4initv)
+    __arm_cp.1_2                             0x000030fc   Number         4  main.o(.text._Z4initv)
+    __arm_cp.1_5                             0x00003144   Number         4  main.o(.text._Z4initv)
+    [Anonymous Symbol]                       0x0000314c   Section        0  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_0                             0x000031ac   Number         4  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_1                             0x000031b0   Number         4  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_2                             0x000031b4   Number         4  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_3                             0x000031b8   Number         4  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_4                             0x000031bc   Number         4  uart.o(.text._Z7sendstrPcz)
+    __arm_cp.2_5                             0x000031c0   Number         4  uart.o(.text._Z7sendstrPcz)
+    [Anonymous Symbol]                       0x000031c4   Section        0  tcpip.o(.text._Z8WriteWBEPht)
+    [Anonymous Symbol]                       0x000031cc   Section        0  main.o(.text._Z8cpu_initv)
+    __arm_cp.0_0                             0x00003220   Number         4  main.o(.text._Z8cpu_initv)
+    __arm_cp.0_1                             0x00003224   Number         4  main.o(.text._Z8cpu_initv)
+    [Anonymous Symbol]                       0x00003228   Section        0  ethernet.o(.text._Z8eth_initRA6_h)
+    __arm_cp.0_0                             0x000032d4   Number         4  ethernet.o(.text._Z8eth_initRA6_h)
+    [Anonymous Symbol]                       0x000032d8   Section        0  uart.o(.text._Z8sendcharh)
+    [Anonymous Symbol]                       0x000032e4   Section        0  tcpip.o(.text._Z9SwapBytest)
+    [Anonymous Symbol]                       0x000032e8   Section        0  tcpip.o(.text._Z9WriteDWBEPhj)
+    [Anonymous Symbol]                       0x000032f8   Section        0  uart.o(.text._Z9uart_initv)
+    __arm_cp.0_0                             0x0000335c   Number         4  uart.o(.text._Z9uart_initv)
+    __arm_cp.0_1                             0x00003360   Number         4  uart.o(.text._Z9uart_initv)
+    __arm_cp.0_2                             0x00003364   Number         4  uart.o(.text._Z9uart_initv)
+    __arm_cp.0_3                             0x00003368   Number         4  uart.o(.text._Z9uart_initv)
+    [Anonymous Symbol]                       0x0000336c   Section        0  main.o(.text.main)
+    __arm_cp.2_1                             0x000033f0   Number         4  main.o(.text.main)
+    __arm_cp.2_2                             0x000033f4   Number         4  main.o(.text.main)
+    __arm_cp.2_3                             0x000033f8   Number         4  main.o(.text.main)
+    __arm_cp.2_4                             0x000033fc   Number         4  main.o(.text.main)
+    .text_divfast                            0x00003408   Section      502  aeabi_sdivfast.o(.text_divfast)
+    i.__ARM_common_ll_muluu                  0x000035fe   Section        0  btod.o(i.__ARM_common_ll_muluu)
+    i.__ARM_fpclassify                       0x00003630   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i._is_digit                              0x0000365c   Section        0  __printf_wp.o(i._is_digit)
+    locale$$code                             0x0000366c   Section       44  lc_numeric_c.o(locale$$code)
+    locale$$code                             0x00003698   Section       44  lc_ctype_c.o(locale$$code)
+    x$fpl$printf1                            0x000036c4   Section       16  printf1.o(x$fpl$printf1)
+    x$fpl$printf2                            0x000036d4   Section       16  printf2.o(x$fpl$printf2)
+    initial_mbstate                          0x000036e4   Data           8  _printf_wctomb.o(.constdata)
+    .constdata                               0x000036e4   Section        8  _printf_wctomb.o(.constdata)
+    x$fpl$usenofp                            0x000036e4   Section        0  usenofp.o(x$fpl$usenofp)
+    uc_hextab                                0x000036ec   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    .constdata                               0x000036ec   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
+    lc_hextab                                0x00003700   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    maptable                                 0x00003714   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .constdata                               0x00003714   Section       17  __printf_flags_ss_wp.o(.constdata)
+    lc_hextab                                0x00003725   Data          19  _printf_fp_hex.o(.constdata)
+    .constdata                               0x00003725   Section       38  _printf_fp_hex.o(.constdata)
+    uc_hextab                                0x00003738   Data          19  _printf_fp_hex.o(.constdata)
+    tenpwrs_x                                0x0000374c   Data          60  bigflt0.o(.constdata)
+    .constdata                               0x0000374c   Section      148  bigflt0.o(.constdata)
+    tenpwrs_i                                0x00003788   Data          64  bigflt0.o(.constdata)
+    locale$$data                             0x00003800   Section       28  lc_numeric_c.o(locale$$data)
+    __lcnum_c_name                           0x00003804   Data           2  lc_numeric_c.o(locale$$data)
+    __lcnum_c_start                          0x0000380c   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_point                          0x00003818   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_thousands                      0x0000381a   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_grouping                       0x0000381b   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_end                            0x0000381c   Data           0  lc_numeric_c.o(locale$$data)
+    locale$$data                             0x0000381c   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x00003820   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x00003828   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x0000392c   Data           0  lc_ctype_c.o(locale$$data)
     .bss                                     0x20001800   Section       96  libspace.o(.bss)
-    Heap_Mem                                 0x200018c0   Data        4096  startup_mdr1986ve1t.o(HEAP)
-    HEAP                                     0x200018c0   Section     4096  startup_mdr1986ve1t.o(HEAP)
-    Stack_Mem                                0x200028c0   Data        4096  startup_mdr1986ve1t.o(STACK)
-    STACK                                    0x200028c0   Section     4096  startup_mdr1986ve1t.o(STACK)
-    __initial_sp                             0x200038c0   Data           0  startup_mdr1986ve1t.o(STACK)
+    Heap_Mem                                 0x200018b0   Data        4096  startup_mdr1986ve1t.o(HEAP)
+    HEAP                                     0x200018b0   Section     4096  startup_mdr1986ve1t.o(HEAP)
+    Stack_Mem                                0x200028b0   Data        4096  startup_mdr1986ve1t.o(STACK)
+    STACK                                    0x200028b0   Section     4096  startup_mdr1986ve1t.o(STACK)
+    __initial_sp                             0x200038b0   Data           0  startup_mdr1986ve1t.o(STACK)
 
     Global Symbols
 
@@ -1928,94 +1889,78 @@ Image Symbol Table
     ETH_ClockCMD                             0x00001ca9   Thumb Code    24  mdr32f9qx_eth.o(.text.ETH_ClockCMD)
     ETH_ClockDeInit                          0x00001cc1   Thumb Code    12  mdr32f9qx_eth.o(.text.ETH_ClockDeInit)
     ETH_DMAFrameRx                           0x00001cd1   Thumb Code    76  mdr32f9qx_eth.o(.text.ETH_DMAFrameRx)
-    ETH_DMAFrameTx                           0x00001d1d   Thumb Code    72  mdr32f9qx_eth.o(.text.ETH_DMAFrameTx)
-    ETH_DMAPrepare                           0x00001d71   Thumb Code    56  mdr32f9qx_eth.o(.text.ETH_DMAPrepare)
-    ETH_DeInit                               0x00001da9   Thumb Code    88  mdr32f9qx_eth.o(.text.ETH_DeInit)
-    ETH_GetMACITStatusRegister               0x00001e0d   Thumb Code     4  mdr32f9qx_eth.o(.text.ETH_GetMACITStatusRegister)
-    ETH_GetPHYStatus                         0x00001e11   Thumb Code    10  mdr32f9qx_eth.o(.text.ETH_GetPHYStatus)
-    ETH_Init                                 0x00001e1b   Thumb Code   272  mdr32f9qx_eth.o(.text.ETH_Init)
-    ETH_MACReceptionCmd                      0x00001f2d   Thumb Code    20  mdr32f9qx_eth.o(.text.ETH_MACReceptionCmd)
-    ETH_MACTransmissionCmd                   0x00001f41   Thumb Code    20  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
-    ETH_PHYCmd                               0x00001f59   Thumb Code    18  mdr32f9qx_eth.o(.text.ETH_PHYCmd)
-    ETH_PHY_ClockConfig                      0x00001f6d   Thumb Code    24  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
-    ETH_PHY_Reset                            0x00001f8d   Thumb Code    26  mdr32f9qx_eth.o(.text.ETH_PHY_Reset)
-    ETH_ReceivedFrame                        0x00001fa9   Thumb Code   356  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
-    ETH_SendFrame                            0x00002111   Thumb Code   248  mdr32f9qx_eth.o(.text.ETH_SendFrame)
-    ETH_Start                                0x0000220d   Thumb Code    38  mdr32f9qx_eth.o(.text.ETH_Start)
-    ETH_StructInit                           0x00002235   Thumb Code   104  mdr32f9qx_eth.o(.text.ETH_StructInit)
-    PORT_Init                                0x000022b5   Thumb Code   228  mdr32f9qx_port.o(.text.PORT_Init)
-    RST_CLK_GetClocksFreq                    0x0000239d   Thumb Code   260  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq)
-    RST_CLK_GetFlagStatus                    0x000024a1   Thumb Code    28  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
-    RST_CLK_HSE2config                       0x000024c5   Thumb Code    32  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
-    RST_CLK_HSE2status                       0x000024e9   Thumb Code    44  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2status)
-    RST_CLK_PCLKcmd                          0x00002515   Thumb Code    24  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
-    SystemCoreClockUpdate                    0x00002531   Thumb Code    84  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
-    SystemInit                               0x00002599   Thumb Code    40  system_mdr1986ve1t.o(.text.SystemInit)
-    TIMER_BRGInit                            0x000025c5   Thumb Code    96  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
-    TIMER_ClearFlag                          0x0000263d   Thumb Code     6  mdr32f9qx_timer.o(.text.TIMER_ClearFlag)
-    TIMER_Cmd                                0x00002643   Thumb Code    16  mdr32f9qx_timer.o(.text.TIMER_Cmd)
-    TIMER_CntEventSourceConfig               0x00002653   Thumb Code    14  mdr32f9qx_timer.o(.text.TIMER_CntEventSourceConfig)
-    TIMER_CntInit                            0x00002661   Thumb Code    52  mdr32f9qx_timer.o(.text.TIMER_CntInit)
-    TIMER_CntStructInit                      0x00002695   Thumb Code    20  mdr32f9qx_timer.o(.text.TIMER_CntStructInit)
-    TIMER_DeInit                             0x000026a9   Thumb Code    82  mdr32f9qx_timer.o(.text.TIMER_DeInit)
-    TIMER_GetCounter                         0x000026fb   Thumb Code     4  mdr32f9qx_timer.o(.text.TIMER_GetCounter)
-    TIMER_GetFlagStatus                      0x000026ff   Thumb Code    10  mdr32f9qx_timer.o(.text.TIMER_GetFlagStatus)
-    TIMER_SetCounter                         0x00002709   Thumb Code     4  mdr32f9qx_timer.o(.text.TIMER_SetCounter)
-    UART_BRGInit                             0x0000270d   Thumb Code    52  mdr32f9qx_uart.o(.text.UART_BRGInit)
-    UART_Cmd                                 0x00002745   Thumb Code    24  mdr32f9qx_uart.o(.text.UART_Cmd)
-    UART_GetFlagStatus                       0x00002761   Thumb Code    10  mdr32f9qx_uart.o(.text.UART_GetFlagStatus)
-    UART_Init                                0x0000276d   Thumb Code   140  mdr32f9qx_uart.o(.text.UART_Init)
-    UART_SendData                            0x00002805   Thumb Code     4  mdr32f9qx_uart.o(.text.UART_SendData)
-    debug_eval(MDR_ETHERNET_TypeDef*)        0x00002809   Thumb Code    64  ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef)
-    CalcChecksum(void*, unsigned short, unsigned short) 0x00002849   Thumb Code    84  tcpip.o(.text._Z12CalcChecksumPvtt)
-    TCPStopTimer()                           0x000028a9   Thumb Code    12  tcpip.o(.text._Z12TCPStopTimerv)
-    uart_tx_init()                           0x000028b5   Thumb Code   104  uart.o(.text._Z12uart_tx_initv)
-    CopyFromFrame(void*, unsigned short*, unsigned int) 0x00002931   Thumb Code    54  tcpip.o(.text._Z13CopyFromFramePvPtj)
-    DoNetworkStuff(MDR_ETHERNET_TypeDef*)    0x00002969   Thumb Code   376  tcpip.o(.text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef)
-    TCPPassiveOpen()                         0x00002b09   Thumb Code    32  tcpip.o(.text._Z14TCPPassiveOpenv)
-    ProcessTCPFrame()                        0x00002b35   Thumb Code   692  tcpip.o(.text._Z15ProcessTCPFramev)
-    TCPClockHandler()                        0x00002e1d   Thumb Code    60  tcpip.o(.text._Z15TCPClockHandlerv)
-    TCPLowLevelInit()                        0x00002e5d   Thumb Code   108  tcpip.o(.text._Z15TCPLowLevelInitv)
-    TCPRestartTimer()                        0x00002ee5   Thumb Code     8  tcpip.o(.text._Z15TCPRestartTimerv)
-    CalcChecksum_TCP(void*, void*, unsigned short, unsigned int, unsigned char) 0x00002ef1   Thumb Code   128  tcpip.o(.text._Z16CalcChecksum_TCPPvS_tjh)
-    PrepareTCP_FRAME(unsigned short)         0x00002f7d   Thumb Code   264  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
-    ProcessICMPFrame()                       0x000030b5   Thumb Code    28  tcpip.o(.text._Z16ProcessICMPFramev)
-    TCPHandleTimeout()                       0x000030d1   Thumb Code    32  tcpip.o(.text._Z16TCPHandleTimeoutv)
-    PrepareARP_ANSWER()                      0x000030fd   Thumb Code    96  tcpip.o(.text._Z17PrepareARP_ANSWERv)
-    ProcessEthIAFrame(unsigned int*, unsigned int) 0x00003169   Thumb Code   288  tcpip.o(.text._Z17ProcessEthIAFramePjj)
-    PrepareARP_REQUEST()                     0x000032ad   Thumb Code   108  tcpip.o(.text._Z18PrepareARP_REQUESTv)
-    TCPReleaseRxBuffer()                     0x00003345   Thumb Code    12  tcpip.o(.text._Z18TCPReleaseRxBufferv)
-    TCPStartRetryTimer()                     0x00003351   Thumb Code    24  tcpip.o(.text._Z18TCPStartRetryTimerv)
-    TCPTransmitTxBuffer(unsigned int, unsigned char*) 0x00003371   Thumb Code    76  tcpip.o(.text._Z19TCPTransmitTxBufferjPh)
-    standard_chksum_opt(void*, unsigned int, unsigned char) 0x000033cd   Thumb Code   180  tcpip.o(.text._Z19standard_chksum_optPvjh)
-    PrepareTCP_DATA_FRAME()                  0x00003489   Thumb Code   264  tcpip.o(.text._Z21PrepareTCP_DATA_FRAMEv)
-    TCPStartTimeWaitTimer()                  0x000035d5   Thumb Code    20  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
-    PrepareICMP_ECHO_REPLY()                 0x000035f1   Thumb Code   196  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
-    TCPHandleRetransmission()                0x000036dd   Thumb Code    68  tcpip.o(.text._Z23TCPHandleRetransmissionv)
-    ProcessEthBroadcastFrame(unsigned int*, unsigned int) 0x00003729   Thumb Code   108  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
-    sendstr(char*, ...)                      0x000037a9   Thumb Code   116  uart.o(.text._Z7sendstrPcz)
-    WriteWBE(unsigned char*, unsigned short) 0x00003839   Thumb Code     8  tcpip.o(.text._Z8WriteWBEPht)
-    eth_init(unsigned char (&) [6])          0x00003841   Thumb Code   172  ethernet.o(.text._Z8eth_initRA6_h)
-    sendchar(int)                            0x000038f1   Thumb Code    32  uart.o(.text._Z8sendchari)
-    SwapBytes(unsigned short)                0x00003915   Thumb Code     4  tcpip.o(.text._Z9SwapBytest)
-    WriteDWBE(unsigned char*, unsigned int)  0x00003919   Thumb Code    16  tcpip.o(.text._Z9WriteDWBEPhj)
-    main                                     0x00003929   Thumb Code   128  main.o(.text.main)
-    __aeabi_uidiv                            0x000039c9   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
-    __aeabi_idiv                             0x00003a0d   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
-    __ARM_common_ll_muluu                    0x00003bbf   Thumb Code    48  btod.o(i.__ARM_common_ll_muluu)
-    __ARM_fpclassify                         0x00003bf1   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
-    _is_digit                                0x00003c1d   Thumb Code    14  __printf_wp.o(i._is_digit)
-    _get_lc_numeric                          0x00003c2d   Thumb Code    44  lc_numeric_c.o(locale$$code)
-    _get_lc_ctype                            0x00003c59   Thumb Code    44  lc_ctype_c.o(locale$$code)
-    _printf_fp_dec                           0x00003c85   Thumb Code    16  printf1.o(x$fpl$printf1)
-    _printf_fp_hex                           0x00003c95   Thumb Code    16  printf2.o(x$fpl$printf2)
-    __I$use$fp                               0x00003ca4   Number         0  usenofp.o(x$fpl$usenofp)
-    Region$$Table$$Base                      0x00003da0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00003dc0   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x00003de9   Data           0  lc_ctype_c.o(locale$$data)
-    Ident                                    0x20000000   Data           2  tcpip.o(.data.Ident)
-    SystemCoreClock                          0x20000004   Data           4  system_mdr1986ve1t.o(.data.SystemCoreClock)
-    TCPRemotePort                            0x20000008   Data           2  tcpip.o(.data.TCPRemotePort)
+    ETH_DMAPrepare                           0x00001d29   Thumb Code    56  mdr32f9qx_eth.o(.text.ETH_DMAPrepare)
+    ETH_DeInit                               0x00001d61   Thumb Code    88  mdr32f9qx_eth.o(.text.ETH_DeInit)
+    ETH_GetMACITStatusRegister               0x00001dc5   Thumb Code     4  mdr32f9qx_eth.o(.text.ETH_GetMACITStatusRegister)
+    ETH_GetPHYStatus                         0x00001dc9   Thumb Code    10  mdr32f9qx_eth.o(.text.ETH_GetPHYStatus)
+    ETH_Init                                 0x00001dd3   Thumb Code   272  mdr32f9qx_eth.o(.text.ETH_Init)
+    ETH_MACReceptionCmd                      0x00001ee5   Thumb Code    20  mdr32f9qx_eth.o(.text.ETH_MACReceptionCmd)
+    ETH_MACTransmissionCmd                   0x00001ef9   Thumb Code    20  mdr32f9qx_eth.o(.text.ETH_MACTransmissionCmd)
+    ETH_PHYCmd                               0x00001f11   Thumb Code    18  mdr32f9qx_eth.o(.text.ETH_PHYCmd)
+    ETH_PHY_ClockConfig                      0x00001f25   Thumb Code    24  mdr32f9qx_eth.o(.text.ETH_PHY_ClockConfig)
+    ETH_PHY_Reset                            0x00001f45   Thumb Code    26  mdr32f9qx_eth.o(.text.ETH_PHY_Reset)
+    ETH_ReceivedFrame                        0x00001f61   Thumb Code   356  mdr32f9qx_eth.o(.text.ETH_ReceivedFrame)
+    ETH_Start                                0x000020c9   Thumb Code    38  mdr32f9qx_eth.o(.text.ETH_Start)
+    ETH_StructInit                           0x000020f1   Thumb Code   104  mdr32f9qx_eth.o(.text.ETH_StructInit)
+    PORT_Init                                0x00002171   Thumb Code   228  mdr32f9qx_port.o(.text.PORT_Init)
+    RST_CLK_GetClocksFreq                    0x00002259   Thumb Code   260  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetClocksFreq)
+    RST_CLK_GetFlagStatus                    0x0000235d   Thumb Code    28  mdr32f9qx_rst_clk.o(.text.RST_CLK_GetFlagStatus)
+    RST_CLK_HSE2config                       0x00002381   Thumb Code    32  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2config)
+    RST_CLK_HSE2status                       0x000023a5   Thumb Code    44  mdr32f9qx_rst_clk.o(.text.RST_CLK_HSE2status)
+    RST_CLK_PCLKcmd                          0x000023d1   Thumb Code    24  mdr32f9qx_rst_clk.o(.text.RST_CLK_PCLKcmd)
+    SystemCoreClockUpdate                    0x000023ed   Thumb Code    84  system_mdr1986ve1t.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x00002455   Thumb Code    40  system_mdr1986ve1t.o(.text.SystemInit)
+    TIMER_BRGInit                            0x00002481   Thumb Code    96  mdr32f9qx_timer.o(.text.TIMER_BRGInit)
+    TIMER_Cmd                                0x000024f9   Thumb Code    16  mdr32f9qx_timer.o(.text.TIMER_Cmd)
+    TIMER_CntEventSourceConfig               0x00002509   Thumb Code    14  mdr32f9qx_timer.o(.text.TIMER_CntEventSourceConfig)
+    TIMER_CntInit                            0x00002517   Thumb Code    52  mdr32f9qx_timer.o(.text.TIMER_CntInit)
+    TIMER_CntStructInit                      0x0000254b   Thumb Code    20  mdr32f9qx_timer.o(.text.TIMER_CntStructInit)
+    TIMER_DeInit                             0x0000255f   Thumb Code    82  mdr32f9qx_timer.o(.text.TIMER_DeInit)
+    UART_BRGInit                             0x000025b1   Thumb Code    52  mdr32f9qx_uart.o(.text.UART_BRGInit)
+    UART_Cmd                                 0x000025e9   Thumb Code    24  mdr32f9qx_uart.o(.text.UART_Cmd)
+    UART_Init                                0x00002605   Thumb Code   140  mdr32f9qx_uart.o(.text.UART_Init)
+    debug_eval(MDR_ETHERNET_TypeDef*)        0x000026a1   Thumb Code    64  ethernet.o(.text._Z10debug_evalP20MDR_ETHERNET_TypeDef)
+    CalcChecksum(void*, unsigned short, unsigned short) 0x000026e1   Thumb Code    84  tcpip.o(.text._Z12CalcChecksumPvtt)
+    TCPStopTimer()                           0x0000273d   Thumb Code    12  tcpip.o(.text._Z12TCPStopTimerv)
+    CopyFromFrame(void*, unsigned short*, unsigned int) 0x00002749   Thumb Code    54  tcpip.o(.text._Z13CopyFromFramePvPtj)
+    ProcessTCPFrame()                        0x00002781   Thumb Code   692  tcpip.o(.text._Z15ProcessTCPFramev)
+    TCPLowLevelInit()                        0x00002a6d   Thumb Code   108  tcpip.o(.text._Z15TCPLowLevelInitv)
+    TCPRestartTimer()                        0x00002af9   Thumb Code     8  tcpip.o(.text._Z15TCPRestartTimerv)
+    PrepareTCP_FRAME(unsigned short)         0x00002b01   Thumb Code   264  tcpip.o(.text._Z16PrepareTCP_FRAMEt)
+    ProcessICMPFrame()                       0x00002c3d   Thumb Code    28  tcpip.o(.text._Z16ProcessICMPFramev)
+    PrepareARP_ANSWER()                      0x00002c59   Thumb Code    96  tcpip.o(.text._Z17PrepareARP_ANSWERv)
+    ProcessEthIAFrame(unsigned int*, unsigned int) 0x00002cd5   Thumb Code   288  tcpip.o(.text._Z17ProcessEthIAFramePjj)
+    TCPStartRetryTimer()                     0x00002e0d   Thumb Code    24  tcpip.o(.text._Z18TCPStartRetryTimerv)
+    standard_chksum_opt(void*, unsigned int, unsigned char) 0x00002e31   Thumb Code   180  tcpip.o(.text._Z19standard_chksum_optPvjh)
+    TCPStartTimeWaitTimer()                  0x00002ef1   Thumb Code    20  tcpip.o(.text._Z21TCPStartTimeWaitTimerv)
+    PrepareICMP_ECHO_REPLY()                 0x00002f0d   Thumb Code   196  tcpip.o(.text._Z22PrepareICMP_ECHO_REPLYv)
+    ProcessEthBroadcastFrame(unsigned int*, unsigned int) 0x00003005   Thumb Code   108  tcpip.o(.text._Z24ProcessEthBroadcastFramePjj)
+    init()                                   0x00003085   Thumb Code    52  main.o(.text._Z4initv)
+    sendstr(char*, ...)                      0x0000314d   Thumb Code    96  uart.o(.text._Z7sendstrPcz)
+    WriteWBE(unsigned char*, unsigned short) 0x000031c5   Thumb Code     8  tcpip.o(.text._Z8WriteWBEPht)
+    cpu_init()                               0x000031cd   Thumb Code    84  main.o(.text._Z8cpu_initv)
+    eth_init(unsigned char (&) [6])          0x00003229   Thumb Code   172  ethernet.o(.text._Z8eth_initRA6_h)
+    sendchar(unsigned char)                  0x000032d9   Thumb Code    12  uart.o(.text._Z8sendcharh)
+    SwapBytes(unsigned short)                0x000032e5   Thumb Code     4  tcpip.o(.text._Z9SwapBytest)
+    WriteDWBE(unsigned char*, unsigned int)  0x000032e9   Thumb Code    16  tcpip.o(.text._Z9WriteDWBEPhj)
+    uart_init()                              0x000032f9   Thumb Code   100  uart.o(.text._Z9uart_initv)
+    main                                     0x0000336d   Thumb Code   116  main.o(.text.main)
+    __aeabi_uidiv                            0x00003409   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
+    __aeabi_idiv                             0x0000344d   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
+    __ARM_common_ll_muluu                    0x000035ff   Thumb Code    48  btod.o(i.__ARM_common_ll_muluu)
+    __ARM_fpclassify                         0x00003631   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    _is_digit                                0x0000365d   Thumb Code    14  __printf_wp.o(i._is_digit)
+    _get_lc_numeric                          0x0000366d   Thumb Code    44  lc_numeric_c.o(locale$$code)
+    _get_lc_ctype                            0x00003699   Thumb Code    44  lc_ctype_c.o(locale$$code)
+    _printf_fp_dec                           0x000036c5   Thumb Code    16  printf1.o(x$fpl$printf1)
+    _printf_fp_hex                           0x000036d5   Thumb Code    16  printf2.o(x$fpl$printf2)
+    __I$use$fp                               0x000036e4   Number         0  usenofp.o(x$fpl$usenofp)
+    Region$$Table$$Base                      0x000037e0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003800   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x00003829   Data           0  lc_ctype_c.o(locale$$data)
+    SystemCoreClock                          0x20000000   Data           4  system_mdr1986ve1t.o(.data.SystemCoreClock)
+    TCPRemotePort                            0x20000004   Data           2  tcpip.o(.data.TCPRemotePort)
+    mac                                      0x20000006   Data           6  main.o(.data.mac)
     TxFrame1                                 0x2000000c   Data        2058  tcpip.o(EXECUTABLE_MEMORY_SECTION)
     TxFrame2                                 0x20000818   Data        1518  tcpip.o(EXECUTABLE_MEMORY_SECTION)
     InputFrame                               0x20000e08   Data        1512  tcpip.o(EXECUTABLE_MEMORY_SECTION)
@@ -2041,14 +1986,10 @@ Image Symbol Table
     TCPSeqNr                                 0x20001898   Data           4  tcpip.o(.bss.TCPSeqNr)
     TCPStateMachine                          0x2000189c   Data           1  tcpip.o(.bss.TCPStateMachine)
     TCPTimer                                 0x2000189d   Data           1  tcpip.o(.bss.TCPTimer)
-    TCPTxDataCount                           0x200018a0   Data           4  tcpip.o(.bss.TCPTxDataCount)
-    TCPUNASeqNr                              0x200018a4   Data           4  tcpip.o(.bss.TCPUNASeqNr)
-    TransmitControl                          0x200018a8   Data           1  tcpip.o(.bss.TransmitControl)
-    TxFrame1Size                             0x200018ac   Data           4  tcpip.o(.bss.TxFrame1Size)
-    TxFrame2Size                             0x200018b0   Data           4  tcpip.o(.bss.TxFrame2Size)
-    init                                     0x200018b4   Data           1  uart.o(.bss.init)
-    pARP                                     0x200018b8   Data           4  tcpip.o(.bss.pARP)
-    pData                                    0x200018bc   Data           4  tcpip.o(.bss.pData)
+    TCPUNASeqNr                              0x200018a0   Data           4  tcpip.o(.bss.TCPUNASeqNr)
+    TransmitControl                          0x200018a4   Data           1  tcpip.o(.bss.TransmitControl)
+    TxFrame2Size                             0x200018a8   Data           4  tcpip.o(.bss.TxFrame2Size)
+    pARP                                     0x200018ac   Data           4  tcpip.o(.bss.pARP)
 
 
 
@@ -2058,291 +1999,267 @@ Memory Map of the image
 
   Image Entry point : 0x00000245
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00005800, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00004038])
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00005400, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00003c40])
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00003eec, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000392c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000000c0   Data   RO          154    RESET               startup_mdr1986ve1t.o
-    0x000000c0   0x000000c0   0x00000008   Code   RO          563  * !!!main             c_p.l(__main.o)
-    0x000000c8   0x000000c8   0x0000003c   Code   RO          898    !!!scatter          c_p.l(__scatter.o)
-    0x00000104   0x00000104   0x0000001c   Code   RO          900    !!handler_zi        c_p.l(__scatter_zi.o)
-    0x00000120   0x00000120   0x00000002   Code   RO          653    .ARM.Collect$$_printf_percent$$00000000  c_p.l(_printf_percent.o)
-    0x00000122   0x00000122   0x0000000a   Code   RO          642    .ARM.Collect$$_printf_percent$$00000001  c_p.l(_printf_n.o)
-    0x0000012c   0x0000012c   0x0000000a   Code   RO          644    .ARM.Collect$$_printf_percent$$00000002  c_p.l(_printf_p.o)
-    0x00000136   0x00000136   0x0000000a   Code   RO          649    .ARM.Collect$$_printf_percent$$00000003  c_p.l(_printf_f.o)
-    0x00000140   0x00000140   0x0000000a   Code   RO          650    .ARM.Collect$$_printf_percent$$00000004  c_p.l(_printf_e.o)
-    0x0000014a   0x0000014a   0x0000000a   Code   RO          651    .ARM.Collect$$_printf_percent$$00000005  c_p.l(_printf_g.o)
-    0x00000154   0x00000154   0x0000000a   Code   RO          652    .ARM.Collect$$_printf_percent$$00000006  c_p.l(_printf_a.o)
-    0x0000015e   0x0000015e   0x0000000a   Code   RO          657    .ARM.Collect$$_printf_percent$$00000007  c_p.l(_printf_ll.o)
-    0x00000168   0x00000168   0x0000000a   Code   RO          646    .ARM.Collect$$_printf_percent$$00000008  c_p.l(_printf_i.o)
-    0x00000172   0x00000172   0x0000000a   Code   RO          647    .ARM.Collect$$_printf_percent$$00000009  c_p.l(_printf_d.o)
-    0x0000017c   0x0000017c   0x0000000a   Code   RO          648    .ARM.Collect$$_printf_percent$$0000000A  c_p.l(_printf_u.o)
-    0x00000186   0x00000186   0x0000000a   Code   RO          645    .ARM.Collect$$_printf_percent$$0000000B  c_p.l(_printf_o.o)
-    0x00000190   0x00000190   0x0000000a   Code   RO          643    .ARM.Collect$$_printf_percent$$0000000C  c_p.l(_printf_x.o)
-    0x0000019a   0x0000019a   0x0000000a   Code   RO          654    .ARM.Collect$$_printf_percent$$0000000D  c_p.l(_printf_lli.o)
-    0x000001a4   0x000001a4   0x0000000a   Code   RO          655    .ARM.Collect$$_printf_percent$$0000000E  c_p.l(_printf_lld.o)
-    0x000001ae   0x000001ae   0x0000000a   Code   RO          656    .ARM.Collect$$_printf_percent$$0000000F  c_p.l(_printf_llu.o)
-    0x000001b8   0x000001b8   0x0000000a   Code   RO          661    .ARM.Collect$$_printf_percent$$00000010  c_p.l(_printf_llo.o)
-    0x000001c2   0x000001c2   0x0000000a   Code   RO          662    .ARM.Collect$$_printf_percent$$00000011  c_p.l(_printf_llx.o)
-    0x000001cc   0x000001cc   0x0000000a   Code   RO          658    .ARM.Collect$$_printf_percent$$00000012  c_p.l(_printf_l.o)
-    0x000001d6   0x000001d6   0x0000000a   Code   RO          640    .ARM.Collect$$_printf_percent$$00000013  c_p.l(_printf_c.o)
-    0x000001e0   0x000001e0   0x0000000a   Code   RO          641    .ARM.Collect$$_printf_percent$$00000014  c_p.l(_printf_s.o)
-    0x000001ea   0x000001ea   0x0000000a   Code   RO          659    .ARM.Collect$$_printf_percent$$00000015  c_p.l(_printf_lc.o)
-    0x000001f4   0x000001f4   0x0000000a   Code   RO          660    .ARM.Collect$$_printf_percent$$00000016  c_p.l(_printf_ls.o)
-    0x000001fe   0x000001fe   0x00000004   Code   RO          705    .ARM.Collect$$_printf_percent$$00000017  c_p.l(_printf_percent_end.o)
-    0x00000202   0x00000202   0x00000002   Code   RO          745    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
-    0x00000204   0x00000204   0x00000000   Code   RO          771    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
-    0x00000204   0x00000204   0x00000000   Code   RO          773    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
-    0x00000204   0x00000204   0x00000000   Code   RO          776    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
-    0x00000204   0x00000204   0x00000000   Code   RO          778    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
-    0x00000204   0x00000204   0x00000000   Code   RO          780    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
-    0x00000204   0x00000204   0x00000006   Code   RO          781    .ARM.Collect$$libinit$$0000000F  c_p.l(libinit2.o)
-    0x0000020a   0x0000020a   0x00000000   Code   RO          783    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
-    0x0000020a   0x0000020a   0x0000000c   Code   RO          784    .ARM.Collect$$libinit$$00000012  c_p.l(libinit2.o)
-    0x00000216   0x00000216   0x00000000   Code   RO          785    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
-    0x00000216   0x00000216   0x00000000   Code   RO          787    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
-    0x00000216   0x00000216   0x0000000a   Code   RO          788    .ARM.Collect$$libinit$$00000016  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          789    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          791    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          793    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          795    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          797    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          799    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          801    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          803    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          807    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          809    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          811    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000000   Code   RO          813    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
-    0x00000220   0x00000220   0x00000002   Code   RO          814    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
-    0x00000222   0x00000222   0x00000002   Code   RO          851    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          879    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          881    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          884    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          887    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          889    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000000   Code   RO          892    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
-    0x00000224   0x00000224   0x00000002   Code   RO          893    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
-    0x00000226   0x00000226   0x00000000   Code   RO          565    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
-    0x00000226   0x00000226   0x00000000   Code   RO          672    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
-    0x00000226   0x00000226   0x00000006   Code   RO          684    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
-    0x0000022c   0x0000022c   0x00000000   Code   RO          674    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
-    0x0000022c   0x0000022c   0x00000004   Code   RO          675    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
-    0x00000230   0x00000230   0x00000000   Code   RO          677    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
-    0x00000230   0x00000230   0x00000008   Code   RO          678    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
-    0x00000238   0x00000238   0x00000002   Code   RO          755    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
-    0x0000023a   0x0000023a   0x00000000   Code   RO          820    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
-    0x0000023a   0x0000023a   0x00000004   Code   RO          821    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
-    0x0000023e   0x0000023e   0x00000006   Code   RO          822    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
-    0x00000244   0x00000244   0x00000074   Code   RO          155  * .text               startup_mdr1986ve1t.o
-    0x000002b8   0x000002b8   0x00000038   Code   RO          549    .text               c_p.l(vsnprintf.o)
-    0x000002f0   0x000002f0   0x000001f8   Code   RO          553    .text               c_p.l(aeabi_sdivfast.o)
-    0x000004e8   0x000004e8   0x00000006   Code   RO          561    .text               c_p.l(heapauxi.o)
-    0x000004ee   0x000004ee   0x0000004e   Code   RO          572    .text               c_p.l(_printf_pad.o)
-    0x0000053c   0x0000053c   0x00000024   Code   RO          574    .text               c_p.l(_printf_truncate.o)
-    0x00000560   0x00000560   0x00000052   Code   RO          576    .text               c_p.l(_printf_str.o)
+    0x00000000   0x00000000   0x000000c0   Data   RO          158    RESET               startup_mdr1986ve1t.o
+    0x000000c0   0x000000c0   0x00000008   Code   RO          567  * !!!main             c_p.l(__main.o)
+    0x000000c8   0x000000c8   0x0000003c   Code   RO          902    !!!scatter          c_p.l(__scatter.o)
+    0x00000104   0x00000104   0x0000001c   Code   RO          904    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x00000120   0x00000120   0x00000002   Code   RO          657    .ARM.Collect$$_printf_percent$$00000000  c_p.l(_printf_percent.o)
+    0x00000122   0x00000122   0x0000000a   Code   RO          646    .ARM.Collect$$_printf_percent$$00000001  c_p.l(_printf_n.o)
+    0x0000012c   0x0000012c   0x0000000a   Code   RO          648    .ARM.Collect$$_printf_percent$$00000002  c_p.l(_printf_p.o)
+    0x00000136   0x00000136   0x0000000a   Code   RO          653    .ARM.Collect$$_printf_percent$$00000003  c_p.l(_printf_f.o)
+    0x00000140   0x00000140   0x0000000a   Code   RO          654    .ARM.Collect$$_printf_percent$$00000004  c_p.l(_printf_e.o)
+    0x0000014a   0x0000014a   0x0000000a   Code   RO          655    .ARM.Collect$$_printf_percent$$00000005  c_p.l(_printf_g.o)
+    0x00000154   0x00000154   0x0000000a   Code   RO          656    .ARM.Collect$$_printf_percent$$00000006  c_p.l(_printf_a.o)
+    0x0000015e   0x0000015e   0x0000000a   Code   RO          661    .ARM.Collect$$_printf_percent$$00000007  c_p.l(_printf_ll.o)
+    0x00000168   0x00000168   0x0000000a   Code   RO          650    .ARM.Collect$$_printf_percent$$00000008  c_p.l(_printf_i.o)
+    0x00000172   0x00000172   0x0000000a   Code   RO          651    .ARM.Collect$$_printf_percent$$00000009  c_p.l(_printf_d.o)
+    0x0000017c   0x0000017c   0x0000000a   Code   RO          652    .ARM.Collect$$_printf_percent$$0000000A  c_p.l(_printf_u.o)
+    0x00000186   0x00000186   0x0000000a   Code   RO          649    .ARM.Collect$$_printf_percent$$0000000B  c_p.l(_printf_o.o)
+    0x00000190   0x00000190   0x0000000a   Code   RO          647    .ARM.Collect$$_printf_percent$$0000000C  c_p.l(_printf_x.o)
+    0x0000019a   0x0000019a   0x0000000a   Code   RO          658    .ARM.Collect$$_printf_percent$$0000000D  c_p.l(_printf_lli.o)
+    0x000001a4   0x000001a4   0x0000000a   Code   RO          659    .ARM.Collect$$_printf_percent$$0000000E  c_p.l(_printf_lld.o)
+    0x000001ae   0x000001ae   0x0000000a   Code   RO          660    .ARM.Collect$$_printf_percent$$0000000F  c_p.l(_printf_llu.o)
+    0x000001b8   0x000001b8   0x0000000a   Code   RO          665    .ARM.Collect$$_printf_percent$$00000010  c_p.l(_printf_llo.o)
+    0x000001c2   0x000001c2   0x0000000a   Code   RO          666    .ARM.Collect$$_printf_percent$$00000011  c_p.l(_printf_llx.o)
+    0x000001cc   0x000001cc   0x0000000a   Code   RO          662    .ARM.Collect$$_printf_percent$$00000012  c_p.l(_printf_l.o)
+    0x000001d6   0x000001d6   0x0000000a   Code   RO          644    .ARM.Collect$$_printf_percent$$00000013  c_p.l(_printf_c.o)
+    0x000001e0   0x000001e0   0x0000000a   Code   RO          645    .ARM.Collect$$_printf_percent$$00000014  c_p.l(_printf_s.o)
+    0x000001ea   0x000001ea   0x0000000a   Code   RO          663    .ARM.Collect$$_printf_percent$$00000015  c_p.l(_printf_lc.o)
+    0x000001f4   0x000001f4   0x0000000a   Code   RO          664    .ARM.Collect$$_printf_percent$$00000016  c_p.l(_printf_ls.o)
+    0x000001fe   0x000001fe   0x00000004   Code   RO          709    .ARM.Collect$$_printf_percent$$00000017  c_p.l(_printf_percent_end.o)
+    0x00000202   0x00000202   0x00000002   Code   RO          749    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x00000204   0x00000204   0x00000000   Code   RO          775    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x00000204   0x00000204   0x00000000   Code   RO          777    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x00000204   0x00000204   0x00000000   Code   RO          780    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x00000204   0x00000204   0x00000000   Code   RO          782    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x00000204   0x00000204   0x00000000   Code   RO          784    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x00000204   0x00000204   0x00000006   Code   RO          785    .ARM.Collect$$libinit$$0000000F  c_p.l(libinit2.o)
+    0x0000020a   0x0000020a   0x00000000   Code   RO          787    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x0000020a   0x0000020a   0x0000000c   Code   RO          788    .ARM.Collect$$libinit$$00000012  c_p.l(libinit2.o)
+    0x00000216   0x00000216   0x00000000   Code   RO          789    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x00000216   0x00000216   0x00000000   Code   RO          791    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x00000216   0x00000216   0x0000000a   Code   RO          792    .ARM.Collect$$libinit$$00000016  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          793    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          795    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          797    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          799    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          801    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          803    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          805    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          807    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          811    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          813    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          815    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000000   Code   RO          817    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x00000220   0x00000220   0x00000002   Code   RO          818    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x00000222   0x00000222   0x00000002   Code   RO          855    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          883    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          885    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          888    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          891    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          893    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000000   Code   RO          896    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
+    0x00000224   0x00000224   0x00000002   Code   RO          897    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
+    0x00000226   0x00000226   0x00000000   Code   RO          569    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x00000226   0x00000226   0x00000000   Code   RO          676    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x00000226   0x00000226   0x00000006   Code   RO          688    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
+    0x0000022c   0x0000022c   0x00000000   Code   RO          678    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x0000022c   0x0000022c   0x00000004   Code   RO          679    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x00000230   0x00000230   0x00000000   Code   RO          681    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x00000230   0x00000230   0x00000008   Code   RO          682    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x00000238   0x00000238   0x00000002   Code   RO          759    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x0000023a   0x0000023a   0x00000000   Code   RO          824    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x0000023a   0x0000023a   0x00000004   Code   RO          825    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x0000023e   0x0000023e   0x00000006   Code   RO          826    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x00000244   0x00000244   0x00000074   Code   RO          159  * .text               startup_mdr1986ve1t.o
+    0x000002b8   0x000002b8   0x00000038   Code   RO          553    .text               c_p.l(vsnprintf.o)
+    0x000002f0   0x000002f0   0x000001f8   Code   RO          557    .text               c_p.l(aeabi_sdivfast.o)
+    0x000004e8   0x000004e8   0x00000006   Code   RO          565    .text               c_p.l(heapauxi.o)
+    0x000004ee   0x000004ee   0x0000004e   Code   RO          576    .text               c_p.l(_printf_pad.o)
+    0x0000053c   0x0000053c   0x00000024   Code   RO          578    .text               c_p.l(_printf_truncate.o)
+    0x00000560   0x00000560   0x00000052   Code   RO          580    .text               c_p.l(_printf_str.o)
     0x000005b2   0x000005b2   0x00000002   PAD
-    0x000005b4   0x000005b4   0x0000006c   Code   RO          578    .text               c_p.l(_printf_dec.o)
-    0x00000620   0x00000620   0x00000026   Code   RO          580    .text               c_p.l(_printf_charcount.o)
+    0x000005b4   0x000005b4   0x0000006c   Code   RO          582    .text               c_p.l(_printf_dec.o)
+    0x00000620   0x00000620   0x00000026   Code   RO          584    .text               c_p.l(_printf_charcount.o)
     0x00000646   0x00000646   0x00000002   PAD
-    0x00000648   0x00000648   0x00000030   Code   RO          582    .text               c_p.l(_printf_char_common.o)
-    0x00000678   0x00000678   0x0000000a   Code   RO          584    .text               c_p.l(_sputc.o)
-    0x00000682   0x00000682   0x00000010   Code   RO          586    .text               c_p.l(_snputc.o)
+    0x00000648   0x00000648   0x00000030   Code   RO          586    .text               c_p.l(_printf_char_common.o)
+    0x00000678   0x00000678   0x0000000a   Code   RO          588    .text               c_p.l(_sputc.o)
+    0x00000682   0x00000682   0x00000010   Code   RO          590    .text               c_p.l(_snputc.o)
     0x00000692   0x00000692   0x00000002   PAD
-    0x00000694   0x00000694   0x000000bc   Code   RO          588    .text               c_p.l(_printf_wctomb.o)
-    0x00000750   0x00000750   0x00000070   Code   RO          591    .text               c_p.l(_printf_longlong_dec.o)
-    0x000007c0   0x000007c0   0x00000070   Code   RO          597    .text               c_p.l(_printf_oct_int_ll.o)
-    0x00000830   0x00000830   0x00000098   Code   RO          617    .text               c_p.l(_printf_hex_int_ll_ptr.o)
-    0x000008c8   0x000008c8   0x00000188   Code   RO          637    .text               c_p.l(__printf_flags_ss_wp.o)
-    0x00000a50   0x00000a50   0x0000007a   Code   RO          688    .text               c_p.l(lludiv10.o)
-    0x00000aca   0x00000aca   0x000000b0   Code   RO          690    .text               c_p.l(_printf_intcommon.o)
+    0x00000694   0x00000694   0x000000bc   Code   RO          592    .text               c_p.l(_printf_wctomb.o)
+    0x00000750   0x00000750   0x00000070   Code   RO          595    .text               c_p.l(_printf_longlong_dec.o)
+    0x000007c0   0x000007c0   0x00000070   Code   RO          601    .text               c_p.l(_printf_oct_int_ll.o)
+    0x00000830   0x00000830   0x00000098   Code   RO          621    .text               c_p.l(_printf_hex_int_ll_ptr.o)
+    0x000008c8   0x000008c8   0x00000188   Code   RO          641    .text               c_p.l(__printf_flags_ss_wp.o)
+    0x00000a50   0x00000a50   0x0000007a   Code   RO          692    .text               c_p.l(lludiv10.o)
+    0x00000aca   0x00000aca   0x000000b0   Code   RO          694    .text               c_p.l(_printf_intcommon.o)
     0x00000b7a   0x00000b7a   0x00000002   PAD
-    0x00000b7c   0x00000b7c   0x00000414   Code   RO          692    .text               c_p.l(_printf_fp_dec.o)
-    0x00000f90   0x00000f90   0x000002d8   Code   RO          696    .text               c_p.l(_printf_fp_hex.o)
-    0x00001268   0x00001268   0x0000002e   Code   RO          701    .text               c_p.l(_printf_char.o)
-    0x00001296   0x00001296   0x0000002e   Code   RO          703    .text               c_p.l(_printf_wchar.o)
-    0x000012c4   0x000012c4   0x00000042   Code   RO          706    .text               c_p.l(_c16rtomb.o)
-    0x00001306   0x00001306   0x00000028   Code   RO          708    .text               c_p.l(rtudiv10.o)
-    0x0000132e   0x0000132e   0x0000003e   Code   RO          710    .text               c_p.l(sys_stackheap_outer.o)
-    0x0000136c   0x0000136c   0x00000010   Code   RO          713    .text               c_p.l(rt_ctype_table.o)
-    0x0000137c   0x0000137c   0x00000008   Code   RO          718    .text               c_p.l(rt_locale_intlibspace.o)
-    0x00001384   0x00001384   0x00000088   Code   RO          720    .text               c_p.l(_printf_fp_infnan.o)
-    0x0000140c   0x0000140c   0x000000d8   Code   RO          722    .text               c_p.l(bigflt0.o)
-    0x000014e4   0x000014e4   0x00000580   Code   RO          725    .text               c_p.l(btod.o)
-    0x00001a64   0x00001a64   0x00000010   Code   RO          734    .text               c_p.l(exit.o)
-    0x00001a74   0x00001a74   0x00000008   Code   RO          751    .text               c_p.l(libspace.o)
-    0x00001a7c   0x00001a7c   0x000000b0   Code   RO          768    .text               c_p.l(strcmpv6m.o)
-    0x00001b2c   0x00001b2c   0x0000000c   Code   RO          815    .text               c_p.l(sys_exit.o)
-    0x00001b38   0x00001b38   0x00000002   Code   RO          840    .text               c_p.l(use_no_semi.o)
-    0x00001b3a   0x00001b3a   0x00000000   Code   RO          842    .text               c_p.l(indicate_semi.o)
-    0x00001b3a   0x00001b3a   0x0000003a   Code   RO          896    .text               c_p.l(__dczerorl.o)
-    0x00001b74   0x00001b74   0x00000018   Code   RO          193    .text.DMA_Cmd       mdr32f9qx_dma.o
-    0x00001b8c   0x00001b8c   0x00000060   Code   RO          179    .text.DMA_CtrlDataInit  mdr32f9qx_dma.o
-    0x00001bec   0x00001bec   0x00000028   Code   RO          175    .text.DMA_DeInit    mdr32f9qx_dma.o
-    0x00001c14   0x00001c14   0x00000064   Code   RO          187    .text.DMA_Init      mdr32f9qx_dma.o
-    0x00001c78   0x00001c78   0x00000010   Code   RO          195    .text.DMA_Request   mdr32f9qx_dma.o
-    0x00001c88   0x00001c88   0x0000000e   Code   RO          189    .text.DMA_StructInit  mdr32f9qx_dma.o
+    0x00000b7c   0x00000b7c   0x00000414   Code   RO          696    .text               c_p.l(_printf_fp_dec.o)
+    0x00000f90   0x00000f90   0x000002d8   Code   RO          700    .text               c_p.l(_printf_fp_hex.o)
+    0x00001268   0x00001268   0x0000002e   Code   RO          705    .text               c_p.l(_printf_char.o)
+    0x00001296   0x00001296   0x0000002e   Code   RO          707    .text               c_p.l(_printf_wchar.o)
+    0x000012c4   0x000012c4   0x00000042   Code   RO          710    .text               c_p.l(_c16rtomb.o)
+    0x00001306   0x00001306   0x00000028   Code   RO          712    .text               c_p.l(rtudiv10.o)
+    0x0000132e   0x0000132e   0x0000003e   Code   RO          714    .text               c_p.l(sys_stackheap_outer.o)
+    0x0000136c   0x0000136c   0x00000010   Code   RO          717    .text               c_p.l(rt_ctype_table.o)
+    0x0000137c   0x0000137c   0x00000008   Code   RO          722    .text               c_p.l(rt_locale_intlibspace.o)
+    0x00001384   0x00001384   0x00000088   Code   RO          724    .text               c_p.l(_printf_fp_infnan.o)
+    0x0000140c   0x0000140c   0x000000d8   Code   RO          726    .text               c_p.l(bigflt0.o)
+    0x000014e4   0x000014e4   0x00000580   Code   RO          729    .text               c_p.l(btod.o)
+    0x00001a64   0x00001a64   0x00000010   Code   RO          738    .text               c_p.l(exit.o)
+    0x00001a74   0x00001a74   0x00000008   Code   RO          755    .text               c_p.l(libspace.o)
+    0x00001a7c   0x00001a7c   0x000000b0   Code   RO          772    .text               c_p.l(strcmpv6m.o)
+    0x00001b2c   0x00001b2c   0x0000000c   Code   RO          819    .text               c_p.l(sys_exit.o)
+    0x00001b38   0x00001b38   0x00000002   Code   RO          844    .text               c_p.l(use_no_semi.o)
+    0x00001b3a   0x00001b3a   0x00000000   Code   RO          846    .text               c_p.l(indicate_semi.o)
+    0x00001b3a   0x00001b3a   0x0000003a   Code   RO          900    .text               c_p.l(__dczerorl.o)
+    0x00001b74   0x00001b74   0x00000018   Code   RO          197    .text.DMA_Cmd       mdr32f9qx_dma.o
+    0x00001b8c   0x00001b8c   0x00000060   Code   RO          183    .text.DMA_CtrlDataInit  mdr32f9qx_dma.o
+    0x00001bec   0x00001bec   0x00000028   Code   RO          179    .text.DMA_DeInit    mdr32f9qx_dma.o
+    0x00001c14   0x00001c14   0x00000064   Code   RO          191    .text.DMA_Init      mdr32f9qx_dma.o
+    0x00001c78   0x00001c78   0x00000010   Code   RO          199    .text.DMA_Request   mdr32f9qx_dma.o
+    0x00001c88   0x00001c88   0x0000000e   Code   RO          193    .text.DMA_StructInit  mdr32f9qx_dma.o
     0x00001c96   0x00001c96   0x00000002   PAD
-    0x00001c98   0x00001c98   0x00000010   Code   RO          216    .text.ETH_BRGInit   mdr32f9qx_eth.o
-    0x00001ca8   0x00001ca8   0x00000018   Code   RO          218    .text.ETH_ClockCMD  mdr32f9qx_eth.o
-    0x00001cc0   0x00001cc0   0x00000010   Code   RO          212    .text.ETH_ClockDeInit  mdr32f9qx_eth.o
-    0x00001cd0   0x00001cd0   0x0000004c   Code   RO          260    .text.ETH_DMAFrameRx  mdr32f9qx_eth.o
-    0x00001d1c   0x00001d1c   0x00000054   Code   RO          264    .text.ETH_DMAFrameTx  mdr32f9qx_eth.o
-    0x00001d70   0x00001d70   0x00000038   Code   RO          232    .text.ETH_DMAPrepare  mdr32f9qx_eth.o
-    0x00001da8   0x00001da8   0x00000064   Code   RO          226    .text.ETH_DeInit    mdr32f9qx_eth.o
-    0x00001e0c   0x00001e0c   0x00000004   Code   RO          240    .text.ETH_GetMACITStatusRegister  mdr32f9qx_eth.o
-    0x00001e10   0x00001e10   0x0000000a   Code   RO          222    .text.ETH_GetPHYStatus  mdr32f9qx_eth.o
-    0x00001e1a   0x00001e1a   0x00000110   Code   RO          230    .text.ETH_Init      mdr32f9qx_eth.o
-    0x00001f2a   0x00001f2a   0x00000002   PAD
-    0x00001f2c   0x00001f2c   0x00000014   Code   RO          238    .text.ETH_MACReceptionCmd  mdr32f9qx_eth.o
-    0x00001f40   0x00001f40   0x00000018   Code   RO          236    .text.ETH_MACTransmissionCmd  mdr32f9qx_eth.o
-    0x00001f58   0x00001f58   0x00000012   Code   RO          224    .text.ETH_PHYCmd    mdr32f9qx_eth.o
-    0x00001f6a   0x00001f6a   0x00000002   PAD
-    0x00001f6c   0x00001f6c   0x00000020   Code   RO          214    .text.ETH_PHY_ClockConfig  mdr32f9qx_eth.o
-    0x00001f8c   0x00001f8c   0x0000001a   Code   RO          220    .text.ETH_PHY_Reset  mdr32f9qx_eth.o
-    0x00001fa6   0x00001fa6   0x00000002   PAD
-    0x00001fa8   0x00001fa8   0x00000168   Code   RO          258    .text.ETH_ReceivedFrame  mdr32f9qx_eth.o
-    0x00002110   0x00002110   0x000000fc   Code   RO          262    .text.ETH_SendFrame  mdr32f9qx_eth.o
-    0x0000220c   0x0000220c   0x00000026   Code   RO          234    .text.ETH_Start     mdr32f9qx_eth.o
-    0x00002232   0x00002232   0x00000002   PAD
-    0x00002234   0x00002234   0x00000074   Code   RO          228    .text.ETH_StructInit  mdr32f9qx_eth.o
-    0x000022a8   0x000022a8   0x0000000c   Code   RO          177    .text.NVIC_ClearPendingIRQ  mdr32f9qx_dma.o
-    0x000022b4   0x000022b4   0x000000e8   Code   RO          276    .text.PORT_Init     mdr32f9qx_port.o
-    0x0000239c   0x0000239c   0x00000104   Code   RO          372    .text.RST_CLK_GetClocksFreq  mdr32f9qx_rst_clk.o
-    0x000024a0   0x000024a0   0x00000024   Code   RO          316    .text.RST_CLK_GetFlagStatus  mdr32f9qx_rst_clk.o
-    0x000024c4   0x000024c4   0x00000024   Code   RO          318    .text.RST_CLK_HSE2config  mdr32f9qx_rst_clk.o
-    0x000024e8   0x000024e8   0x0000002c   Code   RO          320    .text.RST_CLK_HSE2status  mdr32f9qx_rst_clk.o
-    0x00002514   0x00002514   0x0000001c   Code   RO          304    .text.RST_CLK_PCLKcmd  mdr32f9qx_rst_clk.o
-    0x00002530   0x00002530   0x00000068   Code   RO          162    .text.SystemCoreClockUpdate  system_mdr1986ve1t.o
-    0x00002598   0x00002598   0x0000002c   Code   RO          164    .text.SystemInit    system_mdr1986ve1t.o
-    0x000025c4   0x000025c4   0x00000078   Code   RO          538    .text.TIMER_BRGInit  mdr32f9qx_timer.o
-    0x0000263c   0x0000263c   0x00000006   Code   RO          530    .text.TIMER_ClearFlag  mdr32f9qx_timer.o
-    0x00002642   0x00002642   0x00000010   Code   RO          430    .text.TIMER_Cmd     mdr32f9qx_timer.o
-    0x00002652   0x00002652   0x0000000e   Code   RO          446    .text.TIMER_CntEventSourceConfig  mdr32f9qx_timer.o
-    0x00002660   0x00002660   0x00000034   Code   RO          426    .text.TIMER_CntInit  mdr32f9qx_timer.o
-    0x00002694   0x00002694   0x00000014   Code   RO          428    .text.TIMER_CntStructInit  mdr32f9qx_timer.o
-    0x000026a8   0x000026a8   0x00000052   Code   RO          424    .text.TIMER_DeInit  mdr32f9qx_timer.o
-    0x000026fa   0x000026fa   0x00000004   Code   RO          434    .text.TIMER_GetCounter  mdr32f9qx_timer.o
-    0x000026fe   0x000026fe   0x0000000a   Code   RO          528    .text.TIMER_GetFlagStatus  mdr32f9qx_timer.o
-    0x00002708   0x00002708   0x00000004   Code   RO          432    .text.TIMER_SetCounter  mdr32f9qx_timer.o
-    0x0000270c   0x0000270c   0x00000038   Code   RO          414    .text.UART_BRGInit  mdr32f9qx_uart.o
-    0x00002744   0x00002744   0x0000001c   Code   RO          388    .text.UART_Cmd      mdr32f9qx_uart.o
-    0x00002760   0x00002760   0x0000000a   Code   RO          412    .text.UART_GetFlagStatus  mdr32f9qx_uart.o
-    0x0000276a   0x0000276a   0x00000002   PAD
-    0x0000276c   0x0000276c   0x00000098   Code   RO          384    .text.UART_Init     mdr32f9qx_uart.o
-    0x00002804   0x00002804   0x00000004   Code   RO          402    .text.UART_SendData  mdr32f9qx_uart.o
-    0x00002808   0x00002808   0x00000040   Code   RO           42    .text._Z10debug_evalP20MDR_ETHERNET_TypeDef  ethernet.o
-    0x00002848   0x00002848   0x00000060   Code   RO          104    .text._Z12CalcChecksumPvtt  tcpip.o
-    0x000028a8   0x000028a8   0x0000000c   Code   RO           80    .text._Z12TCPStopTimerv  tcpip.o
-    0x000028b4   0x000028b4   0x0000007c   Code   RO           25    .text._Z12uart_tx_initv  uart.o
-    0x00002930   0x00002930   0x00000036   Code   RO           52    .text._Z13CopyFromFramePvPtj  tcpip.o
-    0x00002966   0x00002966   0x00000002   PAD
-    0x00002968   0x00002968   0x000001a0   Code   RO           72    .text._Z14DoNetworkStuffP20MDR_ETHERNET_TypeDef  tcpip.o
-    0x00002b08   0x00002b08   0x0000002c   Code   RO           58    .text._Z14TCPPassiveOpenv  tcpip.o
-    0x00002b34   0x00002b34   0x000002e8   Code   RO           96    .text._Z15ProcessTCPFramev  tcpip.o
-    0x00002e1c   0x00002e1c   0x00000040   Code   RO           74    .text._Z15TCPClockHandlerv  tcpip.o
-    0x00002e5c   0x00002e5c   0x00000088   Code   RO           56    .text._Z15TCPLowLevelInitv  tcpip.o
-    0x00002ee4   0x00002ee4   0x0000000c   Code   RO           76    .text._Z15TCPRestartTimerv  tcpip.o
-    0x00002ef0   0x00002ef0   0x0000008c   Code   RO          110    .text._Z16CalcChecksum_TCPPvS_tjh  tcpip.o
-    0x00002f7c   0x00002f7c   0x00000138   Code   RO           84    .text._Z16PrepareTCP_FRAMEt  tcpip.o
-    0x000030b4   0x000030b4   0x0000001c   Code   RO           94    .text._Z16ProcessICMPFramev  tcpip.o
-    0x000030d0   0x000030d0   0x0000002c   Code   RO           82    .text._Z16TCPHandleTimeoutv  tcpip.o
-    0x000030fc   0x000030fc   0x0000006c   Code   RO           90    .text._Z17PrepareARP_ANSWERv  tcpip.o
-    0x00003168   0x00003168   0x00000144   Code   RO           92    .text._Z17ProcessEthIAFramePjj  tcpip.o
-    0x000032ac   0x000032ac   0x00000098   Code   RO           62    .text._Z18PrepareARP_REQUESTv  tcpip.o
-    0x00003344   0x00003344   0x0000000c   Code   RO           68    .text._Z18TCPReleaseRxBufferv  tcpip.o
-    0x00003350   0x00003350   0x00000020   Code   RO           64    .text._Z18TCPStartRetryTimerv  tcpip.o
-    0x00003370   0x00003370   0x0000005c   Code   RO           70    .text._Z19TCPTransmitTxBufferjPh  tcpip.o
-    0x000033cc   0x000033cc   0x000000bc   Code   RO          106    .text._Z19standard_chksum_optPvjh  tcpip.o
-    0x00003488   0x00003488   0x0000014c   Code   RO           86    .text._Z21PrepareTCP_DATA_FRAMEv  tcpip.o
-    0x000035d4   0x000035d4   0x0000001c   Code   RO          100    .text._Z21TCPStartTimeWaitTimerv  tcpip.o
-    0x000035f0   0x000035f0   0x000000ec   Code   RO           98    .text._Z22PrepareICMP_ECHO_REPLYv  tcpip.o
-    0x000036dc   0x000036dc   0x0000004c   Code   RO           78    .text._Z23TCPHandleRetransmissionv  tcpip.o
-    0x00003728   0x00003728   0x00000080   Code   RO           88    .text._Z24ProcessEthBroadcastFramePjj  tcpip.o
-    0x000037a8   0x000037a8   0x00000090   Code   RO           29    .text._Z7sendstrPcz  uart.o
-    0x00003838   0x00003838   0x00000008   Code   RO          102    .text._Z8WriteWBEPht  tcpip.o
-    0x00003840   0x00003840   0x000000b0   Code   RO           40    .text._Z8eth_initRA6_h  ethernet.o
-    0x000038f0   0x000038f0   0x00000024   Code   RO           27    .text._Z8sendchari  uart.o
-    0x00003914   0x00003914   0x00000004   Code   RO          112    .text._Z9SwapBytest  tcpip.o
-    0x00003918   0x00003918   0x00000010   Code   RO          108    .text._Z9WriteDWBEPhj  tcpip.o
-    0x00003928   0x00003928   0x000000a0   Code   RO            7    .text.main          main.o
-    0x000039c8   0x000039c8   0x000001f6   Code   RO          554    .text_divfast       c_p.l(aeabi_sdivfast.o)
-    0x00003bbe   0x00003bbe   0x00000030   Code   RO          727    i.__ARM_common_ll_muluu  c_p.l(btod.o)
-    0x00003bee   0x00003bee   0x00000002   PAD
-    0x00003bf0   0x00003bf0   0x0000002c   Code   RO          749    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
-    0x00003c1c   0x00003c1c   0x0000000e   Code   RO          630    i._is_digit         c_p.l(__printf_wp.o)
-    0x00003c2a   0x00003c2a   0x00000002   PAD
-    0x00003c2c   0x00003c2c   0x0000002c   Code   RO          732    locale$$code        c_p.l(lc_numeric_c.o)
-    0x00003c58   0x00003c58   0x0000002c   Code   RO          762    locale$$code        c_p.l(lc_ctype_c.o)
-    0x00003c84   0x00003c84   0x00000010   Code   RO          663    x$fpl$printf1       fz_ps.l(printf1.o)
-    0x00003c94   0x00003c94   0x00000010   Code   RO          665    x$fpl$printf2       fz_ps.l(printf2.o)
-    0x00003ca4   0x00003ca4   0x00000000   Code   RO          748    x$fpl$usenofp       fz_ps.l(usenofp.o)
-    0x00003ca4   0x00003ca4   0x00000008   Data   RO          589    .constdata          c_p.l(_printf_wctomb.o)
-    0x00003cac   0x00003cac   0x00000028   Data   RO          618    .constdata          c_p.l(_printf_hex_int_ll_ptr.o)
-    0x00003cd4   0x00003cd4   0x00000011   Data   RO          638    .constdata          c_p.l(__printf_flags_ss_wp.o)
-    0x00003ce5   0x00003ce5   0x00000026   Data   RO          697    .constdata          c_p.l(_printf_fp_hex.o)
-    0x00003d0b   0x00003d0b   0x00000001   PAD
-    0x00003d0c   0x00003d0c   0x00000094   Data   RO          723    .constdata          c_p.l(bigflt0.o)
-    0x00003da0   0x00003da0   0x00000020   Data   RO          895    Region$$Table       anon$$obj.o
-    0x00003dc0   0x00003dc0   0x0000001c   Data   RO          731    locale$$data        c_p.l(lc_numeric_c.o)
-    0x00003ddc   0x00003ddc   0x00000110   Data   RO          761    locale$$data        c_p.l(lc_ctype_c.o)
+    0x00001c98   0x00001c98   0x00000010   Code   RO          220    .text.ETH_BRGInit   mdr32f9qx_eth.o
+    0x00001ca8   0x00001ca8   0x00000018   Code   RO          222    .text.ETH_ClockCMD  mdr32f9qx_eth.o
+    0x00001cc0   0x00001cc0   0x00000010   Code   RO          216    .text.ETH_ClockDeInit  mdr32f9qx_eth.o
+    0x00001cd0   0x00001cd0   0x00000058   Code   RO          264    .text.ETH_DMAFrameRx  mdr32f9qx_eth.o
+    0x00001d28   0x00001d28   0x00000038   Code   RO          236    .text.ETH_DMAPrepare  mdr32f9qx_eth.o
+    0x00001d60   0x00001d60   0x00000064   Code   RO          230    .text.ETH_DeInit    mdr32f9qx_eth.o
+    0x00001dc4   0x00001dc4   0x00000004   Code   RO          244    .text.ETH_GetMACITStatusRegister  mdr32f9qx_eth.o
+    0x00001dc8   0x00001dc8   0x0000000a   Code   RO          226    .text.ETH_GetPHYStatus  mdr32f9qx_eth.o
+    0x00001dd2   0x00001dd2   0x00000110   Code   RO          234    .text.ETH_Init      mdr32f9qx_eth.o
+    0x00001ee2   0x00001ee2   0x00000002   PAD
+    0x00001ee4   0x00001ee4   0x00000014   Code   RO          242    .text.ETH_MACReceptionCmd  mdr32f9qx_eth.o
+    0x00001ef8   0x00001ef8   0x00000018   Code   RO          240    .text.ETH_MACTransmissionCmd  mdr32f9qx_eth.o
+    0x00001f10   0x00001f10   0x00000012   Code   RO          228    .text.ETH_PHYCmd    mdr32f9qx_eth.o
+    0x00001f22   0x00001f22   0x00000002   PAD
+    0x00001f24   0x00001f24   0x00000020   Code   RO          218    .text.ETH_PHY_ClockConfig  mdr32f9qx_eth.o
+    0x00001f44   0x00001f44   0x0000001a   Code   RO          224    .text.ETH_PHY_Reset  mdr32f9qx_eth.o
+    0x00001f5e   0x00001f5e   0x00000002   PAD
+    0x00001f60   0x00001f60   0x00000168   Code   RO          262    .text.ETH_ReceivedFrame  mdr32f9qx_eth.o
+    0x000020c8   0x000020c8   0x00000026   Code   RO          238    .text.ETH_Start     mdr32f9qx_eth.o
+    0x000020ee   0x000020ee   0x00000002   PAD
+    0x000020f0   0x000020f0   0x00000074   Code   RO          232    .text.ETH_StructInit  mdr32f9qx_eth.o
+    0x00002164   0x00002164   0x0000000c   Code   RO          181    .text.NVIC_ClearPendingIRQ  mdr32f9qx_dma.o
+    0x00002170   0x00002170   0x000000e8   Code   RO          280    .text.PORT_Init     mdr32f9qx_port.o
+    0x00002258   0x00002258   0x00000104   Code   RO          376    .text.RST_CLK_GetClocksFreq  mdr32f9qx_rst_clk.o
+    0x0000235c   0x0000235c   0x00000024   Code   RO          320    .text.RST_CLK_GetFlagStatus  mdr32f9qx_rst_clk.o
+    0x00002380   0x00002380   0x00000024   Code   RO          322    .text.RST_CLK_HSE2config  mdr32f9qx_rst_clk.o
+    0x000023a4   0x000023a4   0x0000002c   Code   RO          324    .text.RST_CLK_HSE2status  mdr32f9qx_rst_clk.o
+    0x000023d0   0x000023d0   0x0000001c   Code   RO          308    .text.RST_CLK_PCLKcmd  mdr32f9qx_rst_clk.o
+    0x000023ec   0x000023ec   0x00000068   Code   RO          166    .text.SystemCoreClockUpdate  system_mdr1986ve1t.o
+    0x00002454   0x00002454   0x0000002c   Code   RO          168    .text.SystemInit    system_mdr1986ve1t.o
+    0x00002480   0x00002480   0x00000078   Code   RO          500    .text.TIMER_BRGInit  mdr32f9qx_timer.o
+    0x000024f8   0x000024f8   0x00000010   Code   RO          392    .text.TIMER_Cmd     mdr32f9qx_timer.o
+    0x00002508   0x00002508   0x0000000e   Code   RO          408    .text.TIMER_CntEventSourceConfig  mdr32f9qx_timer.o
+    0x00002516   0x00002516   0x00000034   Code   RO          388    .text.TIMER_CntInit  mdr32f9qx_timer.o
+    0x0000254a   0x0000254a   0x00000014   Code   RO          390    .text.TIMER_CntStructInit  mdr32f9qx_timer.o
+    0x0000255e   0x0000255e   0x00000052   Code   RO          386    .text.TIMER_DeInit  mdr32f9qx_timer.o
+    0x000025b0   0x000025b0   0x00000038   Code   RO          542    .text.UART_BRGInit  mdr32f9qx_uart.o
+    0x000025e8   0x000025e8   0x0000001c   Code   RO          516    .text.UART_Cmd      mdr32f9qx_uart.o
+    0x00002604   0x00002604   0x0000009c   Code   RO          512    .text.UART_Init     mdr32f9qx_uart.o
+    0x000026a0   0x000026a0   0x00000040   Code   RO           46    .text._Z10debug_evalP20MDR_ETHERNET_TypeDef  ethernet.o
+    0x000026e0   0x000026e0   0x0000005c   Code   RO          108    .text._Z12CalcChecksumPvtt  tcpip.o
+    0x0000273c   0x0000273c   0x0000000c   Code   RO           84    .text._Z12TCPStopTimerv  tcpip.o
+    0x00002748   0x00002748   0x00000036   Code   RO           56    .text._Z13CopyFromFramePvPtj  tcpip.o
+    0x0000277e   0x0000277e   0x00000002   PAD
+    0x00002780   0x00002780   0x000002ec   Code   RO          100    .text._Z15ProcessTCPFramev  tcpip.o
+    0x00002a6c   0x00002a6c   0x0000008c   Code   RO           60    .text._Z15TCPLowLevelInitv  tcpip.o
+    0x00002af8   0x00002af8   0x00000008   Code   RO           80    .text._Z15TCPRestartTimerv  tcpip.o
+    0x00002b00   0x00002b00   0x0000013c   Code   RO           88    .text._Z16PrepareTCP_FRAMEt  tcpip.o
+    0x00002c3c   0x00002c3c   0x0000001c   Code   RO           98    .text._Z16ProcessICMPFramev  tcpip.o
+    0x00002c58   0x00002c58   0x0000007c   Code   RO           94    .text._Z17PrepareARP_ANSWERv  tcpip.o
+    0x00002cd4   0x00002cd4   0x00000138   Code   RO           96    .text._Z17ProcessEthIAFramePjj  tcpip.o
+    0x00002e0c   0x00002e0c   0x00000024   Code   RO           68    .text._Z18TCPStartRetryTimerv  tcpip.o
+    0x00002e30   0x00002e30   0x000000c0   Code   RO          110    .text._Z19standard_chksum_optPvjh  tcpip.o
+    0x00002ef0   0x00002ef0   0x0000001c   Code   RO          104    .text._Z21TCPStartTimeWaitTimerv  tcpip.o
+    0x00002f0c   0x00002f0c   0x000000f8   Code   RO          102    .text._Z22PrepareICMP_ECHO_REPLYv  tcpip.o
+    0x00003004   0x00003004   0x00000080   Code   RO           92    .text._Z24ProcessEthBroadcastFramePjj  tcpip.o
+    0x00003084   0x00003084   0x000000c8   Code   RO            9    .text._Z4initv      main.o
+    0x0000314c   0x0000314c   0x00000078   Code   RO           34    .text._Z7sendstrPcz  uart.o
+    0x000031c4   0x000031c4   0x00000008   Code   RO          106    .text._Z8WriteWBEPht  tcpip.o
+    0x000031cc   0x000031cc   0x0000005c   Code   RO            7    .text._Z8cpu_initv  main.o
+    0x00003228   0x00003228   0x000000b0   Code   RO           44    .text._Z8eth_initRA6_h  ethernet.o
+    0x000032d8   0x000032d8   0x0000000c   Code   RO           32    .text._Z8sendcharh  uart.o
+    0x000032e4   0x000032e4   0x00000004   Code   RO          116    .text._Z9SwapBytest  tcpip.o
+    0x000032e8   0x000032e8   0x00000010   Code   RO          112    .text._Z9WriteDWBEPhj  tcpip.o
+    0x000032f8   0x000032f8   0x00000074   Code   RO           30    .text._Z9uart_initv  uart.o
+    0x0000336c   0x0000336c   0x0000009c   Code   RO           11    .text.main          main.o
+    0x00003408   0x00003408   0x000001f6   Code   RO          558    .text_divfast       c_p.l(aeabi_sdivfast.o)
+    0x000035fe   0x000035fe   0x00000030   Code   RO          731    i.__ARM_common_ll_muluu  c_p.l(btod.o)
+    0x0000362e   0x0000362e   0x00000002   PAD
+    0x00003630   0x00003630   0x0000002c   Code   RO          753    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
+    0x0000365c   0x0000365c   0x0000000e   Code   RO          634    i._is_digit         c_p.l(__printf_wp.o)
+    0x0000366a   0x0000366a   0x00000002   PAD
+    0x0000366c   0x0000366c   0x0000002c   Code   RO          736    locale$$code        c_p.l(lc_numeric_c.o)
+    0x00003698   0x00003698   0x0000002c   Code   RO          766    locale$$code        c_p.l(lc_ctype_c.o)
+    0x000036c4   0x000036c4   0x00000010   Code   RO          667    x$fpl$printf1       fz_ps.l(printf1.o)
+    0x000036d4   0x000036d4   0x00000010   Code   RO          669    x$fpl$printf2       fz_ps.l(printf2.o)
+    0x000036e4   0x000036e4   0x00000000   Code   RO          752    x$fpl$usenofp       fz_ps.l(usenofp.o)
+    0x000036e4   0x000036e4   0x00000008   Data   RO          593    .constdata          c_p.l(_printf_wctomb.o)
+    0x000036ec   0x000036ec   0x00000028   Data   RO          622    .constdata          c_p.l(_printf_hex_int_ll_ptr.o)
+    0x00003714   0x00003714   0x00000011   Data   RO          642    .constdata          c_p.l(__printf_flags_ss_wp.o)
+    0x00003725   0x00003725   0x00000026   Data   RO          701    .constdata          c_p.l(_printf_fp_hex.o)
+    0x0000374b   0x0000374b   0x00000001   PAD
+    0x0000374c   0x0000374c   0x00000094   Data   RO          727    .constdata          c_p.l(bigflt0.o)
+    0x000037e0   0x000037e0   0x00000020   Data   RO          899    Region$$Table       anon$$obj.o
+    0x00003800   0x00003800   0x0000001c   Data   RO          735    locale$$data        c_p.l(lc_numeric_c.o)
+    0x0000381c   0x0000381c   0x00000110   Data   RO          765    locale$$data        c_p.l(lc_ctype_c.o)
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00004000, Size: 0x00001800, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00000038])
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00003c00, Size: 0x00001800, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00000040])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   COMPRESSED   0x00000002   Data   RW          116    .data.Ident         tcpip.o
-    0x20000002   COMPRESSED   0x00000002   PAD
-    0x20000004   COMPRESSED   0x00000004   Data   RW          166    .data.SystemCoreClock  system_mdr1986ve1t.o
-    0x20000008   COMPRESSED   0x00000002   Data   RW          119    .data.TCPRemotePort  tcpip.o
-    0x2000000a   COMPRESSED   0x00000002   PAD
-    0x2000000c   COMPRESSED   0x000013e4   Data   RW          135    EXECUTABLE_MEMORY_SECTION  tcpip.o
+    0x20000000   COMPRESSED   0x00000004   Data   RW          170    .data.SystemCoreClock  system_mdr1986ve1t.o
+    0x20000004   COMPRESSED   0x00000002   Data   RW          123    .data.TCPRemotePort  tcpip.o
+    0x20000006   COMPRESSED   0x00000006   Data   RW           13    .data.mac           main.o
+    0x2000000c   COMPRESSED   0x000013e4   Data   RW          139    EXECUTABLE_MEMORY_SECTION  tcpip.o
     0x200013f0   COMPRESSED   0x00000010   PAD
-    0x20001400   COMPRESSED   0x00000400   Data   RW          203    EXECUTABLE_MEMORY_SECTION  mdr32f9qx_dma.o
+    0x20001400   COMPRESSED   0x00000400   Data   RW          207    EXECUTABLE_MEMORY_SECTION  mdr32f9qx_dma.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20001800, Load base: 0x00004038, Size: 0x000020c0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20001800, Load base: 0x00003c40, Size: 0x000020b0, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20001800        -       0x00000060   Zero   RW          752    .bss                c_p.l(libspace.o)
-    0x20001860        -       0x00000004   Zero   RW          139    .bss.EthernetARP_Answer  tcpip.o
-    0x20001864        -       0x00000004   Zero   RW          140    .bss.EthernetIP_Frame  tcpip.o
-    0x20001868        -       0x00000004   Zero   RW          141    .bss.EthernetTCPIP_Frame  tcpip.o
-    0x2000186c        -       0x00000004   Zero   RW          125    .bss.ISNGenHigh     tcpip.o
-    0x20001870        -       0x00000001   Zero   RW          124    .bss.LastFrameSent  tcpip.o
-    0x20001871   0x00004038   0x00000003   PAD
-    0x20001874        -       0x00000004   Zero   RW          133    .bss.RecdFrameIP    tcpip.o
-    0x20001878        -       0x00000006   Zero   RW          132    .bss.RecdFrameMAC   tcpip.o
-    0x2000187e        -       0x00000002   Zero   RW          134    .bss.RecdIPFrameLength  tcpip.o
-    0x20001880        -       0x00000004   Zero   RW          121    .bss.RemoteIP       tcpip.o
-    0x20001884        -       0x00000006   Zero   RW          120    .bss.RemoteMAC      tcpip.o
-    0x2000188a        -       0x00000001   Zero   RW          130    .bss.RetryCounter   tcpip.o
-    0x2000188b        -       0x00000001   Zero   RW          122    .bss.SocketStatus   tcpip.o
-    0x2000188c        -       0x00000004   Zero   RW          128    .bss.TCPAckNr       tcpip.o
-    0x20001890        -       0x00000001   Zero   RW          143    .bss.TCPFlags       tcpip.o
-    0x20001891   0x00004038   0x00000001   PAD
-    0x20001892        -       0x00000002   Zero   RW          118    .bss.TCPLocalPort   tcpip.o
-    0x20001894        -       0x00000004   Zero   RW          114    .bss.TCPRxDataCount  tcpip.o
-    0x20001898        -       0x00000004   Zero   RW          126    .bss.TCPSeqNr       tcpip.o
-    0x2000189c        -       0x00000001   Zero   RW          123    .bss.TCPStateMachine  tcpip.o
-    0x2000189d        -       0x00000001   Zero   RW          129    .bss.TCPTimer       tcpip.o
-    0x2000189e   0x00004038   0x00000002   PAD
-    0x200018a0        -       0x00000004   Zero   RW          115    .bss.TCPTxDataCount  tcpip.o
-    0x200018a4        -       0x00000004   Zero   RW          127    .bss.TCPUNASeqNr    tcpip.o
-    0x200018a8        -       0x00000001   Zero   RW          138    .bss.TransmitControl  tcpip.o
-    0x200018a9   0x00004038   0x00000003   PAD
-    0x200018ac        -       0x00000004   Zero   RW          136    .bss.TxFrame1Size   tcpip.o
-    0x200018b0        -       0x00000004   Zero   RW          137    .bss.TxFrame2Size   tcpip.o
-    0x200018b4        -       0x00000001   Zero   RW           31    .bss.init           uart.o
-    0x200018b5   0x00004038   0x00000003   PAD
-    0x200018b8        -       0x00000004   Zero   RW          142    .bss.pARP           tcpip.o
-    0x200018bc        -       0x00000004   Zero   RW          117    .bss.pData          tcpip.o
-    0x200018c0        -       0x00001000   Zero   RW          153    HEAP                startup_mdr1986ve1t.o
-    0x200028c0        -       0x00001000   Zero   RW          152    STACK               startup_mdr1986ve1t.o
+    0x20001800        -       0x00000060   Zero   RW          756    .bss                c_p.l(libspace.o)
+    0x20001860        -       0x00000004   Zero   RW          143    .bss.EthernetARP_Answer  tcpip.o
+    0x20001864        -       0x00000004   Zero   RW          144    .bss.EthernetIP_Frame  tcpip.o
+    0x20001868        -       0x00000004   Zero   RW          145    .bss.EthernetTCPIP_Frame  tcpip.o
+    0x2000186c        -       0x00000004   Zero   RW          129    .bss.ISNGenHigh     tcpip.o
+    0x20001870        -       0x00000001   Zero   RW          128    .bss.LastFrameSent  tcpip.o
+    0x20001871   0x00003c40   0x00000003   PAD
+    0x20001874        -       0x00000004   Zero   RW          137    .bss.RecdFrameIP    tcpip.o
+    0x20001878        -       0x00000006   Zero   RW          136    .bss.RecdFrameMAC   tcpip.o
+    0x2000187e        -       0x00000002   Zero   RW          138    .bss.RecdIPFrameLength  tcpip.o
+    0x20001880        -       0x00000004   Zero   RW          125    .bss.RemoteIP       tcpip.o
+    0x20001884        -       0x00000006   Zero   RW          124    .bss.RemoteMAC      tcpip.o
+    0x2000188a        -       0x00000001   Zero   RW          134    .bss.RetryCounter   tcpip.o
+    0x2000188b        -       0x00000001   Zero   RW          126    .bss.SocketStatus   tcpip.o
+    0x2000188c        -       0x00000004   Zero   RW          132    .bss.TCPAckNr       tcpip.o
+    0x20001890        -       0x00000001   Zero   RW          147    .bss.TCPFlags       tcpip.o
+    0x20001891   0x00003c40   0x00000001   PAD
+    0x20001892        -       0x00000002   Zero   RW          122    .bss.TCPLocalPort   tcpip.o
+    0x20001894        -       0x00000004   Zero   RW          118    .bss.TCPRxDataCount  tcpip.o
+    0x20001898        -       0x00000004   Zero   RW          130    .bss.TCPSeqNr       tcpip.o
+    0x2000189c        -       0x00000001   Zero   RW          127    .bss.TCPStateMachine  tcpip.o
+    0x2000189d        -       0x00000001   Zero   RW          133    .bss.TCPTimer       tcpip.o
+    0x2000189e   0x00003c40   0x00000002   PAD
+    0x200018a0        -       0x00000004   Zero   RW          131    .bss.TCPUNASeqNr    tcpip.o
+    0x200018a4        -       0x00000001   Zero   RW          142    .bss.TransmitControl  tcpip.o
+    0x200018a5   0x00003c40   0x00000003   PAD
+    0x200018a8        -       0x00000004   Zero   RW          141    .bss.TxFrame2Size   tcpip.o
+    0x200018ac        -       0x00000004   Zero   RW          146    .bss.pARP           tcpip.o
+    0x200018b0        -       0x00001000   Zero   RW          157    HEAP                startup_mdr1986ve1t.o
+    0x200028b0        -       0x00001000   Zero   RW          156    STACK               startup_mdr1986ve1t.o
 
 
 ==============================================================================
@@ -2352,23 +2269,23 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       240          4          0          0          0      13894   ethernet.o
-       160         32          0          0          0       8322   main.o
-       302         16          0       1024          0       8919   mdr32f9qx_dma.o
-      1544         60          0          0          0      21857   mdr32f9qx_eth.o
-       232          4          0          0          0       5508   mdr32f9qx_port.o
-       404         16          0          0          0      14434   mdr32f9qx_rst_clk.o
-       328         24          0          0          0      25306   mdr32f9qx_timer.o
-       250         20          0          0          0       8574   mdr32f9qx_uart.o
-       116         28        192          0       8192       1944   startup_mdr1986ve1t.o
-       148         24          0          4          0       1635   system_mdr1986ve1t.o
-      3838        514          0       5096         83      22798   tcpip.o
-       304         52          0          0          1      10804   uart.o
+       240          4          0          0          0      13881   ethernet.o
+       448        196          0          6          0       8713   main.o
+       302         16          0       1024          0       8903   mdr32f9qx_dma.o
+      1220         56          0          0          0      21842   mdr32f9qx_eth.o
+       232          4          0          0          0       5493   mdr32f9qx_port.o
+       404         16          0          0          0      14419   mdr32f9qx_rst_clk.o
+       304         24          0          0          0      25291   mdr32f9qx_timer.o
+       240         24          0          0          0       8559   mdr32f9qx_uart.o
+       116         28        192          0       8192       1932   startup_mdr1986ve1t.o
+       148         24          0          4          0       1623   system_mdr1986ve1t.o
+      2494        320          0       5094         71      22785   tcpip.o
+       248         40          0          0          0      10982   uart.o
 
     ----------------------------------------------------------------------
-      7880        794        224       6144       8288     143995   Object Totals
+      6408        752        224       6144       8272     144423   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        14          0          0         20         12          0   (incl. Padding)
+        12          0          0         16          9          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2477,15 +2394,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15332       1006        776       6144       8384     145727   Grand Totals
-     15332       1006        776         56       8384     145727   ELF Image Totals (compressed)
-     15332       1006        776         56          0          0   ROM Totals
+     13860        964        776       6144       8368     146155   Grand Totals
+     13860        964        776         64       8368     146155   ELF Image Totals (compressed)
+     13860        964        776         64          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16108 (  15.73kB)
-    Total RW  Size (RW Data + ZI Data)             14528 (  14.19kB)
-    Total ROM Size (Code + RO Data + RW Data)      16164 (  15.79kB)
+    Total RO  Size (Code + RO Data)                14636 (  14.29kB)
+    Total RW  Size (RW Data + ZI Data)             14512 (  14.17kB)
+    Total ROM Size (Code + RO Data + RW Data)      14700 (  14.36kB)
 
 ==============================================================================
 

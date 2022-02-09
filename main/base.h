@@ -14,10 +14,8 @@
 #include "string.h"
 #include "stdio.h"
 #include "stdarg.h"
-#include "uart.h"
 #include "time.h"
 
-#define PRINT(...) sendstr(__VA_ARGS__); 
 
 typedef uint64_t U64;
 typedef uint32_t U32;

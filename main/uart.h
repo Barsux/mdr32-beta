@@ -9,6 +9,7 @@
 #include <stdarg.h>
 #include <inttypes.h>
 
+
+void uart_init();
 int sendstr(char * fmt, ...);
-void usart_tx_byte(const char data);
 #endif 
