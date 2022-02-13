@@ -20,24 +20,34 @@ void uart_init(){
 	
 	PORT_Init(MDR_PORTC, &uart_port);
 	
+	uart_port.PORT_Pin = PORT_Pin_4;
+	uart_port.PORT_OE = PORT_OE_IN;
+	
+	PORT_Init(MDR_PORTC, &uart_port);
+	
+	//NVIC_EnableIRQ(UART1_IRQn);
+	
 	RST_CLK_PCLKcmd(RST_CLK_PCLK_UART1, ENABLE);
-	UART_BRGInit(MDR_UART1, UART_HCLKdiv2);
-	uart_init.UART_BaudRate = 115200;
+	UART_BRGInit(MDR_UART1, UART_HCLKdiv1);
+	uart_init.UART_BaudRate = 57600;
 	uart_init.UART_WordLength = UART_WordLength8b;
 	uart_init.UART_StopBits = UART_StopBits1;
 	uart_init.UART_Parity = UART_Parity_0;
 	uart_init.UART_FIFOMode = UART_FIFO_OFF;
-	uart_init.UART_HardwareFlowControl = UART_HardwareFlowControl_TXE;
-		
+	uart_init.UART_HardwareFlowControl = UART_HardwareFlowControl_TXE | UART_HardwareFlowControl_RXE;
+	
+	
 	UART_Init(MDR_UART1, &uart_init);
+	//UART_ITConfig(MDR_UART1, UART_IT_RX, ENABLE);	
 	UART_Cmd(MDR_UART1, ENABLE);	
+	
 }
-
 void sendchar(uint8_t c)
 {
     while (MDR_UART1->FR & UART_FLAG_TXFF);
 		MDR_UART1->DR = (uint8_t)c;
 }
+
 
 int sendstr(char * fmt, ...){
 	char buff[2048];

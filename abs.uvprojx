@@ -16,8 +16,8 @@
         <TargetCommonOption>
           <Device>MDR1986BE1T</Device>
           <Vendor>Milandr</Vendor>
-          <PackID>Keil.MDR1986BExx.2.0.3</PackID>
-          <PackURL>https://ic.milandr.ru/soft/</PackURL>
+          <PackID>Milandr.MDR1986BExx.1.4.2</PackID>
+          <PackURL>https://github.com/in4lio/mdr1986x-pack-repo/raw/master/</PackURL>
           <Cpu>IRAM(0x20000000,0x8000) IRAM2(0x20100000,0x4000) IROM(0x00000000,0x20000) CPUTYPE("Cortex-M1") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>

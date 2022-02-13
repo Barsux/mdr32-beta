@@ -11,5 +11,6 @@
 
 
 void uart_init();
+uint8_t getchr();
 int sendstr(char * fmt, ...);
 #endif 

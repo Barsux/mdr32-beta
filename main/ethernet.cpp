@@ -1,5 +1,5 @@
 #include "ethernet.h"
-
+#define PRINT(...) sendstr(__VA_ARGS__)
 
 int eth_init(MAC &srcMAC){
 	//PRINT("ETH INIT");
@@ -9,7 +9,7 @@ int eth_init(MAC &srcMAC){
 	
 
 	RST_CLK_HSE2config(RST_CLK_HSE2_ON);
-	if(RST_CLK_HSE2status() == ERROR) {};
+	if(RST_CLK_HSE2status() == ERROR) return -1;
 	
 	ETH_PHY_ClockConfig(ETH_PHY_CLOCK_SOURCE_HSE2, ETH_PHY_HCLKdiv1);
 	ETH_BRGInit(ETH_HCLKdiv1);
@@ -50,10 +50,6 @@ void debug_eval(MDR_ETHERNET_TypeDef * ETHERNETx){
 	if(ETHERNETx->ETH_R_Head != ETHERNETx->ETH_R_Tail){
 	/*if(status_reg & ETH_MAC_IT_RF_OK ){*/
 		ETH_StatusPacketReceptionStruct.Status = ETH_ReceivedFrame(ETHERNETx, InputFrame);
-
-		if(ETH_StatusPacketReceptionStruct.Fields.UCA)
-			 ProcessEthIAFrame(InputFrame, ETH_StatusPacketReceptionStruct.Fields.Length);
-		if(ETH_StatusPacketReceptionStruct.Fields.BCA)
-			 ProcessEthBroadcastFrame(InputFrame, ETH_StatusPacketReceptionStruct.Fields.Length);
+		PRINT("Accept packet with size=%u", ETHERNETx->ETH_R_Tail);
 	}
 }

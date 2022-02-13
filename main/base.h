@@ -7,7 +7,6 @@
 #include "MDR32F9Qx_eth.h"              // Keil::Drivers:Ethernet
 #include "MDR32F9Qx_port.h"             // Keil::Drivers:PORT
 #include "MDR32F9Qx_timer.h"            // Keil::Drivers:TIMER
-
 //#include "MDR32F9Qx_eeprom.h"           // Keil::Drivers:EEPROM
 
 #include "inttypes.h"
@@ -15,6 +14,7 @@
 #include "stdio.h"
 #include "stdarg.h"
 #include "time.h"
+#include "uart.h"
 
 
 typedef uint64_t U64;
