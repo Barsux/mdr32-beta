@@ -8,7 +8,7 @@
 #include "MDR32F9Qx_port.h"             // Keil::Drivers:PORT
 #include "MDR32F9Qx_timer.h"            // Keil::Drivers:TIMER
 //#include "MDR32F9Qx_eeprom.h"           // Keil::Drivers:EEPROM
-
+#include <math.h>
 #include "inttypes.h"
 #include "string.h"
 #include "stdio.h"

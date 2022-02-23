@@ -15,6 +15,17 @@
   C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_eth.h \
   C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_port.h \
   C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_timer.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\version \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \

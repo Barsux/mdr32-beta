@@ -44,8 +44,7 @@ void debug_eval(MDR_ETHERNET_TypeDef * ETHERNETx){
 	uint32_t InputFrame[1514/4];
 	uint16_t status_reg;
 	ETH_StatusPacketReceptionTypeDef ETH_StatusPacketReceptionStruct;
-
-	status_reg = ETH_GetMACITStatusRegister(ETHERNETx);
+	status_reg = ETHERNETx->ETH_IFR;
 
 	if(ETHERNETx->ETH_R_Head != ETHERNETx->ETH_R_Tail){
 	/*if(status_reg & ETH_MAC_IT_RF_OK ){*/

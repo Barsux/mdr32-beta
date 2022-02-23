@@ -29,7 +29,7 @@ void uart_init(){
 	
 	RST_CLK_PCLKcmd(RST_CLK_PCLK_UART1, ENABLE);
 	UART_BRGInit(MDR_UART1, UART_HCLKdiv1);
-	uart_init.UART_BaudRate = 57600;
+	uart_init.UART_BaudRate = 115200;
 	uart_init.UART_WordLength = UART_WordLength8b;
 	uart_init.UART_StopBits = UART_StopBits1;
 	uart_init.UART_Parity = UART_Parity_0;
