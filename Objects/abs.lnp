@@ -5,6 +5,7 @@
 ".\objects\uart.o"
 ".\objects\ethernet.o"
 ".\objects\tcpip.o"
+".\objects\time.o"
 ".\objects\startup_mdr1986ve1t.o"
 ".\objects\system_mdr1986ve1t.o"
 ".\objects\mdr32f9qx_dma.o"

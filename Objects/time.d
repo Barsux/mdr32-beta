@@ -1,5 +1,4 @@
-./objects/ethernet.o: main\ethernet.cpp main\ethernet.h main\tcpip.h \
-  main\base.h \
+./objects/time.o: main\time.cpp main\time.h main\base.h \
   C:\Users\barsux\AppData\Local\Arm\Packs\Keil\MDR1986BExx\2.0.3\Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\inc\MDR1986VE1T.h \
   RTE\Device\MDR1986BE1T\MDR32F9Qx_config.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
@@ -33,5 +32,4 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h main\time.h \
-  main\uart.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h main\uart.h

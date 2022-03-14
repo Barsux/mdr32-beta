@@ -22,13 +22,14 @@ Dialog DLL:      TARMCM1.DLL V1.14.4.0
  
 <h2>Project:</h2>
 D:\Projects\C...C++\ARM\mdr32-beta\abs.uvprojx
-Project File Date:  02/21/2022
+Project File Date:  02/28/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(3): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/DeviceSupport/MDR1986VE1T/inc\MDR1986VE1T.h(86): warning: In file included from...
 ./RTE/Device/MDR1986BE1T\MDR32F9Qx_config.h(83): warning: 'USE_MDR1986VE1T' macro redefined [-Wmacro-redefined]
@@ -37,8 +38,9 @@ C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/M
 <command line>(4): note: previous definition is here
 #define USE_MDR1986VE1T 1
         ^
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(3): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/DeviceSupport/MDR1986VE1T/inc\MDR1986VE1T.h(87): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/CoreSupport/CM1\core_cm1.h(131): warning: In file included from...
@@ -48,8 +50,9 @@ C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/M
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/CoreSupport/CM1\core_cmFunc.h(453): warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
   register uint32_t result;
   ^~~~~~~~~
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(3): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/DeviceSupport/MDR1986VE1T/inc\MDR1986VE1T.h(854): warning: "Legacy v1.5.3: RST_CLK_PLL_CONTROL_PLL_CPU_PLD_Pos will be replaced by RST_CLK_PLL_CONTROL_PLL_CPU_RLD_Pos" [-W#warnings]
     #warning "Legacy v1.5.3: RST_CLK_PLL_CONTROL_PLL_CPU_PLD_Pos will be replaced by RST_CLK_PLL_CONTROL_PLL_CPU_RLD_Pos"
@@ -57,20 +60,23 @@ C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/M
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/CMSIS/MDR32Fx/DeviceSupport/MDR1986VE1T/inc\MDR1986VE1T.h(867): warning: "Legacy v1.5.3: RST_CLK_PLL_CONTROL_PLL_CPU_PLD will be replaced by RST_CLK_PLL_CONTROL_PLL_CPU_RLD" [-W#warnings]
     #warning "Legacy v1.5.3: RST_CLK_PLL_CONTROL_PLL_CPU_PLD will be replaced by RST_CLK_PLL_CONTROL_PLL_CPU_RLD"
      ^
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(6): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_uart.h(47): warning: "Legacy v1.5.3: BaudRateStatus enumeration is deprecated. Use @ref ErrorStatus instead" [-W#warnings]
     #warning "Legacy v1.5.3: BaudRateStatus enumeration is deprecated. Use @ref ErrorStatus instead"
      ^
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(7): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_eth.h(518): warning: "Legacy v1.5.3: ETH_ERROR and ETH_SUCCESS will be removed: use @ref ErrorStatus (ERROR as ETH_ERROR, SUCCESS as ETH_SUCCESS)" [-W#warnings]
     #warning "Legacy v1.5.3: ETH_ERROR and ETH_SUCCESS will be removed: use @ref ErrorStatus (ERROR as ETH_ERROR, SUCCESS as ETH_SUCCESS)"
      ^
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(8): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_port.h(225): warning: "Legacy v1.5.3: @ref BitAction enumeration (Bit_RESET, Bit_SET) will be removed. Use @ref BitStatus." [-W#warnings]
     #warning "Legacy v1.5.3: @ref BitAction enumeration (Bit_RESET, Bit_SET) will be removed. Use @ref BitStatus."
@@ -78,27 +84,43 @@ C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_port.h(286): warning: "Legacy v1.5.3: BitAction enumeration (Bit_RESET, Bit_SET) will be removed. In PORT_WriteBit() function use @ref BitStatus instead of @ref BitAction" [-W#warnings]
     #warning "Legacy v1.5.3: BitAction enumeration (Bit_RESET, Bit_SET) will be removed. In PORT_WriteBit() function use @ref BitStatus instead of @ref BitAction"
      ^
-main/main.cpp(1): warning: In file included from...
-main/main.h(4): warning: In file included from...
+main/ethernet.cpp(1): warning: In file included from...
+main/ethernet.h(3): warning: In file included from...
+main/tcpip.h(167): warning: In file included from...
 main/base.h(9): warning: In file included from...
 C:/Users/barsux/AppData/Local/Arm/Packs/Keil/MDR1986BExx/2.0.3/Libraries/SPL/MDR32Fx/inc\MDR32F9Qx_timer.h(91): warning: "Legacy v1.5.3: TIMER_EvSrc_None is deprecated and will be removed, use TIMER_EvSrc_TIM_CLK instead" [-W#warnings]
     #warning "Legacy v1.5.3: TIMER_EvSrc_None is deprecated and will be removed, use TIMER_EvSrc_TIM_CLK instead"
      ^
-main/main.cpp(80): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        PRINT("%f", time_clock_coeff);
+main/ethernet.cpp(52): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                PRINT("Accept packet with size=%u", ETHERNETx->ETH_R_Tail);
+                      ^
+main/ethernet.cpp(61): warning: cast to 'ethheader *' from smaller integer type 'std::uint8_t' (aka 'unsigned char') [-Wint-to-pointer-cast]
+        struct ethheader *eth = (struct ethheader *)packet[4];
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/ethernet.cpp(68): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        PRINT("SENDING");
               ^
-main/main.cpp(93): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        PRINT("%llu", get_utc());
+main/ethernet.cpp(70): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        PRINT("SENDED");
               ^
-main/main.cpp(98): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
-        PRINT("%llu", get_utc());
+main/ethernet.cpp(83): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        PRINT("Sending...");
               ^
-13 warnings generated.
-compiling main.cpp...
+main/ethernet.cpp(85): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        PRINT("Sended!");
+              ^
+main/ethernet.cpp(82): warning: implicit conversion from 'int' to 'U16' (aka 'unsigned short') changes value from 524296 to 8 [-Wconstant-conversion]
+        eth->h_proto = U16SWAP(0x0800);
+                     ~ ^~~~~~~~~~~~~~~
+main/ethernet.cpp(3): note: expanded from macro 'U16SWAP'
+#define U16SWAP(digit) ((digit << 8)| (digit >> 8))
+                        ~~~~~~~~~~~~^~~~~~~~~~~~~~
+17 warnings generated.
+compiling ethernet.cpp...
 linking...
-Program Size: Code=10656 RO-data=848 RW-data=4 ZI-data=8296  
+Program Size: Code=11632 RO-data=776 RW-data=2048 ZI-data=8288  
 FromELF: creating hex file...
-".\Objects\abs.axf" - 0 Error(s), 13 Warning(s).
+".\Objects\abs.axf" - 0 Error(s), 17 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -129,30 +151,30 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1. Rev.6+:2.0.3
-      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\inc\MDR1986VE1T.h
-      Include file:  Libraries\SPL\MDR32Fx\MDR32F9Qx_config.h
-      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\system_MDR1986VE1T.h
-      Include file:  Libraries\SPL\MDR32Fx\inc\IRQ_Handler_Template\MDR1986VE1T_IT.h
       Source file:   Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\system_MDR1986VE1T.c
-      Source file:   Libraries\SPL\MDR32Fx\src\IRQ_Handler_Template\MDR1986VE1T_IT.c
+      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\system_MDR1986VE1T.h
+      Include file:  Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\inc\MDR1986VE1T.h
       Source file:   Libraries\CMSIS\MDR32Fx\DeviceSupport\MDR1986VE1T\startup\arm\startup_MDR1986VE1T.S
       Include file:  Libraries\CMSIS\MDR32Fx\CoreSupport\CM1\core_cm1.h
+      Include file:  Libraries\SPL\MDR32Fx\MDR32F9Qx_config.h
+      Include file:  Libraries\SPL\MDR32Fx\inc\IRQ_Handler_Template\MDR1986VE1T_IT.h
+      Source file:   Libraries\SPL\MDR32Fx\src\IRQ_Handler_Template\MDR1986VE1T_IT.c
 
    * Component: Keil::Drivers:DMA:2.0.3
-      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_dma.h
       Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_dma.c
+      Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_dma.h
 
    * Component: Keil::Drivers:Ethernet:2.0.3
-      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_eth.c
       Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_eth.h
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_eth.c
 
    * Component: Keil::Drivers:PORT:2.0.3
       Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_port.h
       Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_port.c
 
    * Component: Keil::Drivers:RST_CLK:2.0.3
-      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_rst_clk.c
       Include file:  Libraries\SPL\MDR32Fx\inc\MDR32F9Qx_rst_clk.h
+      Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_rst_clk.c
 
    * Component: Keil::Drivers:TIMER:2.0.3
       Source file:   Libraries\SPL\MDR32Fx\src\MDR32F9Qx_timer.c

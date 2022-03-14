@@ -1,5 +1,6 @@
 #include "ethernet.h"
 #define PRINT(...) sendstr(__VA_ARGS__)
+#define U16SWAP(digit) ((digit << 8)| (digit >> 8))
 
 int eth_init(MAC &srcMAC){
 	//PRINT("ETH INIT");
@@ -34,7 +35,6 @@ int eth_init(MAC &srcMAC){
 	ETH_InitStruct.ETH_Dilimiter = 0x5DC;
 	
 	ETH_Init(MDR_ETHERNET1, (ETH_InitTypeDef *) &ETH_InitStruct);
-	TCPLowLevelInit();
 	ETH_PHYCmd(MDR_ETHERNET1, ENABLE);
 	ETH_Start(MDR_ETHERNET1);
 	return 1;
@@ -53,84 +53,18 @@ void debug_eval(MDR_ETHERNET_TypeDef * ETHERNETx){
 	}
 }
 
-void debug_send(MDR_ETHERNET_TypeDef * ETHERNETx, MAC src, MAC dst){
-	uint8_t size;
-	uint8_t packet[size + 5]; //4 Bytes before/ 1Byte therefore
-	memset(packet, 0, size+6);
-	packet[0] = size;
-	struct ethheader *eth = (struct ethheader *)packet[4];
-	for(int i = 0; i < 6; i++){
-		eth->h_source[i] = src[i];
-		eth->h_dest[i] = dst[i];
-	}
-	eth->h_proto = 0x0800;
-	packet[size-1] = size - sizeof(ethheader);
-	PRINT("SENDING");
-	ETH_SendFrame(ETHERNETx, (uint32_t *) packet, (uint32_t) packet[0]);
-	PRINT("SENDED");
-}
-
-int	SendPacket(void* buffer, int size, MAC macsrc, MAC macdst)
-{
-	uint16_t i;
-	uint32_t tmp, head, tail;
-	uint32_t *src, *dst;
-	uint16_t space[2];
-
-	tail = MDR_ETHERNET1->ETH_R_Tail;
-	head = MDR_ETHERNET1->ETH_R_Head;
-
-	if(head>tail)
-	{
-		space[0]=head-tail;
-		space[1]=0;
-	} else
-	{
-		space[0]=0x2000-tail;
-		space[1]=head-0x1000;
-	}
-
-	if(size>(space[0]+space[1]-8))	return 0;	
-
-	tmp=size;
-	src=(U32*)buffer;
-	dst=(U32*)(0x38000000+tail);
+void send_packet(U8 * packet, U32 * size){
 	
-	*dst++ =tmp;
-	space[0]-=4;
-	if((U32)dst>0x1FFC)	dst=(U32*)0x38001000;
-
-	tmp=(size+3)/4;
-
-	if(size<=space[0])
-	{
-		for(i=0; i<tmp; i++)
-			*dst++ = *src++;
-	}
-	else
-	{
-		tmp-=space[0]/4;
-		for(i=0;i<(space[0]/4);i++)
-			*dst++ = *src++;
-		dst=(uint32_t*)0x38001000;
-		for(i=0;i<tmp;i++)
-			*dst++ = *src++;
-	}
-	if((U32)dst>0x1FFC)	dst=(U32*)0x38001000;
-	tmp=0;
-	*dst++ =tmp;
-	if((U32)dst>0x1FFC)	dst=(U32*)0x38001000;
-
-	MDR_ETHERNET1->ETH_X_Tail=(U32)dst;
-	return	size;
 }
-
 void create_packet(MAC src, MAC dst){
 	U8 packet[1000];
 	memset(packet, 0, 1000);
-	struct ethheader *eth = (struct ethheader *)packet;
+	*(uint32_t *)&packet[0] = sizeof(ethheader);
+	struct ethheader *eth = (struct ethheader *)(packet + 4);
 	memcpy(eth->h_source, src, 6);
 	memcpy(eth->h_dest, dst, 6);
-	eth->h_proto = 0x0800;
-	SendPacket(packet, 1000, src, dst);
+	eth->h_proto = U16SWAP(0x0800);
+	PRINT("Sending...");
+	ETH_SendFrame(MDR_ETHERNET1, (uint32_t *) packet, *(uint32_t*)&packet[0]);
+	PRINT("Sended!");
 }

@@ -443,6 +443,16 @@
               <FileType>5</FileType>
               <FilePath>.\main\tcpip.h</FilePath>
             </File>
+            <File>
+              <FileName>time.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\main\time.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>time.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main\time.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
